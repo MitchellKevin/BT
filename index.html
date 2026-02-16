@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <form>
+    <section>
+        <form>
         <fieldset>
             <legend>
                 1. Gegevens van de overledene
@@ -15,7 +17,7 @@
                 <legend>1a</legend>
                 <label>
                     Voorletter(s), tussen-voegsel(s) en achternaam
-                    <input type="text" name="name">
+                    <input type="text" name="name" pattern="">
                 </label>
                 <label>
                     Bsn overledene
@@ -153,6 +155,7 @@
             </fieldset>
         </fieldset>
         <button type="submit">Versturen</button>
-    </form>
+        </form>
+    </section>
 </body>
 </html>
