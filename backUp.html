@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <form>
+        <fieldset>
+            <legend>
+                1. Gegevens van de overledene
+            </legend>
+            <section>
+            <fieldset>
+                <legend>1a</legend>
+                <label>
+                    Voorletter(s), tussen-voegsel(s) en achternaam
+                    <input type="text" name="name" pattern="">
+                </label>
+                <label>
+                    Bsn overledene
+                    <input type="text" name="bsn">
+                </label>
+                <label>
+                    Overlijdendataum
+                    <input type="date">
+                </label>
+            </fieldset>
+            </section>
+            <section>
+            <fieldset>
+                <legend>
+                    1b
+                </legend>
+                <label>
+                    <div class="q">Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</div>
+                    <div>
+                    <label>
+                        <input type="radio" name="1b_1" value="nee">
+                        Nee. Ga verder met vraag 1c
+                    </label>
+                    <label>
+                        <input type="radio" name="1b_1" value="ja">
+                        Ja
+                    </label>
+                    </div>
+                </label>
+                    <br><br>
+
+                    <label>Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of parnetscahpsvoorwaarden laten vastleggen in een notriale akte?
+                    <label>
+                        Nee. Ga verder met vraag 1c
+                        <input type="radio" name="1b_2" value="nee">
+                    </label>
+                    <label>
+                        Ja. Stuur een kopie van de akte mee met de aangifte
+                        <input type="radio" name="1b_2" value="ja">
+                    </label>
+                </label>
+
+                <br><br>
+
+                <label>Hadden de overledene en diens partner een finaal verrekenbeding?
+                    <label>
+                        Nee
+                        <input type="radio" name="1b_3" value="nee">
+                    </label>
+                    <label>
+                        Ja
+                        <input type="radio" name="1b_3" value="ja">
+                    </label>
+                </label>
+
+                <br><br>
+
+                <label>Datum huwelijkse of partnerschapsvoorwaarden
+                    <input type="date" name="1b_4">
+                </label>
+                </label>
+            </fieldset>
+            </section>
+            <section>
+            <fieldset>
+                <legend>1c</legend>
+                <label>Hadden de overledene kinderen?
+                    <label>
+                        Nee. Ga verder met vraag 1d.
+                        <input type="radio" name="1c_1" value="nee">
+                    </label>
+                    <label>
+                        Ja
+                        <input type="radio" name="1c_1" value="ja">
+                    </label>
+                </label>
+
+                <br><br>
+
+                <label>
+                    Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?
+                    <label>
+                        Nee. Ga verder met vraag 1d.
+                        <input type="radio" name="1c_2" value="nee">
+                    </label>
+                    <label>
+                        Ja
+                        <input type="radio" name="1c_2" value="ja">
+                    </label>
+                </label>
+
+                <br><br>
+
+                <label>
+                    Had dit overleden kind zelf kinderen?
+                    <label>
+                        Nee
+                        <input type="radio" name="1c_3" value="nee">
+                    </label>
+                    <label>
+                        Ja
+                        <input type="radio" name="1c_3" value="ja">
+                    </label>
+                </label>
+            </fieldset>
+            </section>
+            <section>
+            <fieldset>
+                <legend>
+                    1d
+                </legend>
+                <label>
+                    Had de overledene een testament?
+                    <label>
+                        Nee. Ga verder met vraag 2.
+                        <input type="radio" name="1d_1" value="nee">
+                    </label>
+                    <label>
+                        Ja. Vul de gegevens in van de notaris die het testament heeft opgemaakt en de datum van het testament.
+                        <input type="radio" name="1d_1" value="ja">
+                    </label>
+                </label>
+                <br><br>
+                <label>
+                    Protocolnummer notaris
+                    <input type="number" name="1d_2">
+                </label>
+                <br><br>
+                <label>
+                    Voorletter(s), tussenvoegsel(s) en achternaam
+                    <input type="text" name="1d_3">
+                </label>
+                <br><br>
+                <label>
+                    Protocolnummer notaris
+                    <input type="text" name="1d_4">
+                </label>
+                <br><br>
+                <label>
+                    Protocolnummer notaris
+                    <input type="date" name="1d_5">
+                </label>
+            </fieldset>
+            </section>
+        </fieldset>
+        <button type="submit">Versturen</button>
+        </form>
+    </section>
+</body>
+</html>

@@ -1,11 +1,27 @@
-section{
+body{
+    background: #ffffff;
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 238, 0, 1) 50%, rgba(255, 255, 255, 1) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
+    border: solid .1em red;
     width: 100vw;
-    height: 70vh;
+    height: 100vh;
+    margin: 0;
+    
 }
+
 form{
-    width: 60%;
-    height: 50%;
+    border-radius: .8em;
+    padding: 3em;
+    width: 30%;
+    height: fit-content;
+    background-color: white;
+    flex-direction: column;
+}
+
+button{
+    right: 0;
+    font-size: large;
+    margin-top: .5em;
 }
