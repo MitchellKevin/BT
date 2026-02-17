@@ -56,3 +56,23 @@ bsnNr8.onkeyup = function() {
         bsnNr9.focus();
     }
 }
+
+
+// Save data on input
+const form = document.querySelector('form');
+form.addEventListener('input', () => {
+    const formData = new FormData(form);
+    const formObj = Object.fromEntries(formData.entries());
+    localStorage.setItem('formData', JSON.stringify(formObj));
+});
+
+// Load data on page load
+window.addEventListener('load', () => {
+    const savedData = localStorage.getItem('formData');
+    if (savedData) {
+        const data = JSON.parse(savedData);
+        Object.keys(data).forEach(key => {
+            if (form.elements[key]) form.elements[key].value = data[key];
+        });
+    }
+});

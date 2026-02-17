@@ -30,9 +30,10 @@ Hoe ik ervoor kan zorgen dat ik met meerdere input velden, een geheel kan maken 
 Hoeveel tijd heeft het me gekost:
 12:00-15:45
 
-TO DO:
+TO DO voor morgen:
 * (Optional)NS API gebruiken en de storingen vermelden(2U)
 * Radio buttons omzetten naar de HIG (![alt text](image.png))(1U)
 * Patterns, regex(1U)
 * Responsive(1U)
 * Progressive disclosure(2U with hidden)
+* LocalStorage gebruiken voor tijdelijke cookies(30M)
