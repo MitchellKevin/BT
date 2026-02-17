@@ -24,6 +24,12 @@ Concept:
 ![alt text](/img/image-1.png)
 ![alt text](/img/image-2.png)
 
+Wat heb ik geleerd?
+Hoe ik ervoor kan zorgen dat ik met meerdere input velden, een geheel kan maken en de gebruiker naar het volgende tekstvak kan laten gaan met een beetje JS, waar de huistijl staat en die toegepast. Hoe ik een extra button kan toevoegen.
+
+Hoeveel tijd heeft het me gekost:
+12:00-15:45
+
 TO DO:
 * (Optional)NS API gebruiken en de storingen vermelden(2U)
 * Radio buttons omzetten naar de HIG (![alt text](image.png))(1U)
