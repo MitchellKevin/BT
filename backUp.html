@@ -9,7 +9,7 @@
 <body>
     <header>
         <img src="img/logo.png" width="110em" height="80em">
-        <h1>NS</h1>
+        <h1></h1>
     </header>
     <main>
         <h2>Dit is een schoolproject</h2>
@@ -32,7 +32,17 @@
                     </label>
                     <label>
                         <div class="q">Bsn overledene</div>
-                        <input type="text" name="bsn">
+                        <div class="bsn">
+                            <input type="text" id="bsnNr1" maxlength="1">
+                            <input type="text" id="bsnNr2" maxlength="1">
+                            <input type="text" id="bsnNr3" maxlength="1">
+                            <input type="text" id="bsnNr4" maxlength="1">
+                            <input type="text" id="bsnNr5" maxlength="1">
+                            <input type="text" id="bsnNr6" maxlength="1">
+                            <input type="text" id="bsnNr7" maxlength="1">
+                            <input type="text" id="bsnNr8" maxlength="1">
+                            <input type="text" id="bsnNr9" maxlength="1">
+                        </div>
                     </label>
                     <label>
                         <div class="q">Overlijdendatum</div>
@@ -49,11 +59,11 @@
                         <div class="q">Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</div>
                         <div class="radioButtons">
                             <input type="radio" name="1b_1" value="nee">
-                            <label>Nee</label>
+                            <span>Nee</span>
                         </div>
                         <div class="radioButtons">
                             <input type="radio" name="1b_1" value="ja">
-                            <label>Ja</label>
+                            <span>Ja</span>
                         </div>
                     </label>
                         <br><br>
@@ -184,5 +194,6 @@
         </section>
     </main>
     <footer></footer>
+    <script src="script.js"></script>
 </body>
 </html>

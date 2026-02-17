@@ -1,6 +1,7 @@
 :root{
-    --main-color:rgb(255, 201, 23);;
+    --main-color:rgb(255, 201, 23);
     --second-color:rgb(0, 48, 130);
+    --third-color: rgb(0, 99, 211);
 }
 
 *{
@@ -62,6 +63,7 @@ input{
     border-radius: .2em;
     border: none;
     height: 2.5em;
+    padding: 0 0 0 0.5em;
 }
 
 input[type="radio"]{
@@ -83,24 +85,28 @@ legend{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 70%;
+    align-items: center;
+    width: 100%;
     gap: .3em;
 }
 
 button, a{
-    font-size: 1.3em;
-    padding: .4em;
-    border: solid grey .1em;
+    width: 95%;
+    font-size: 1.1em;
+    padding: 1em;
+    border: solid rgb(173, 173, 173) .1em;
     color: white;
-    background-color: var(--second-color);
+    background-color: var(--third-color);
     border-radius: .2em;
+    font-weight: 500;
 }
 
 a{
+    width: 89%;
     text-align: center;
-    background-color: lightgrey;
+    background-color: var(--main-color);
     text-decoration: none;
-    color: grey;
+    color: var(--third-color);
 }
 
 input[name="Voorletters"]{
@@ -112,7 +118,7 @@ input[name="Tussenvoegsels"]{
 }
 
 input[name="Achternaam"]{
-    width: 48%;
+    width: 44%;
 }
 
 .gegevensOverledene{
@@ -125,11 +131,24 @@ input[name="Achternaam"]{
     display: flex;
     align-items: center;
     gap: .5em;
+    position: relative;
+}
+
+.bsn{
+    display: flex;
+    gap: 0.2em;
+    flex-wrap: wrap;
+}
+
+.bsn input{
+    width: 5%
 }
 
 footer{
     height: 10em;
 }
+
+
 /* body{
     background: #ffffff;
     background-color: var(--main-color);

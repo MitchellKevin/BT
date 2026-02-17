@@ -23,3 +23,8 @@ Concept:
 ![alt text](/imgimage.png)
 ![alt text](/img/image-1.png)
 ![alt text](/img/image-2.png)
+
+TO DO:
+* NS API gebruiken en de storingen vermelden
+* Radio buttons omzetten naar de HIG (![alt text](image.png))
+* Patterns
