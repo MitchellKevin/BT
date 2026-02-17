@@ -25,6 +25,8 @@ Concept:
 ![alt text](/img/image-2.png)
 
 TO DO:
-* NS API gebruiken en de storingen vermelden
-* Radio buttons omzetten naar de HIG (![alt text](image.png))
-* Patterns
+* (Optional)NS API gebruiken en de storingen vermelden(2U)
+* Radio buttons omzetten naar de HIG (![alt text](image.png))(1U)
+* Patterns, regex(1U)
+* Responsive(1U)
+* Progressive disclosure(2U with hidden)
