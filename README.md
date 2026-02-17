@@ -18,3 +18,8 @@ Wat ga ik morgen doen?
 * Meer de huistijl toepassen en in de root alle variablen aanmaken voor de styling.
 * Tweede pagina maken
 * Paterns toepassen
+
+Concept:
+![alt text](/imgimage.png)
+![alt text](/img/image-1.png)
+![alt text](/img/image-2.png)

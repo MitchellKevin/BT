@@ -1,10 +1,113 @@
 :root{
-    --main-color:rgb(255, 213, 0);
-    --second-color:rgb(16, 9, 154);
+    --main-color:rgb(255, 201, 23);;
+    --second-color:rgb(0, 48, 130);
+}
+
+*{
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+body{
+    background-color: var(--main-color);
 }
 
 
-body{
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+}
+
+section{
+    margin-top: 2em;
+}
+
+h2{
+    text-align: center;
+    padding: 1em 0 1em 0;
+    background-color: lightgrey;
+    margin-bottom: 1em;
+    font-size: 1em;
+    color: var(--second-color);
+
+}
+
+fieldset{
+    border: none;
+    color: var(--second-color);
+    margin: 0;
+}
+
+.q{
+    font-size: 1.1em;
+    color: black;
+    margin-top: .8em;
+}
+
+label{
+    margin-top: .4em;
+    color: var(--second-color);
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+input{
+    margin-top: .4em;
+    font-size: 1em;
+    border-radius: .2em;
+    border: none;
+    height: 2.5em;
+}
+
+input[type="radio"]{
+    width: 3em;
+    accent-color: var(--second-color);
+}
+
+legend{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.title{
+    font-size: 1.4em;
+    margin-bottom: .8em;
+}
+
+.buttonSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    gap: .3em;
+}
+
+button, a{
+    font-size: 1.3em;
+    padding: .4em;
+    border: solid grey .1em;
+    color: white;
+    background-color: var(--second-color);
+    border-radius: .2em;
+}
+
+a{
+    text-align: center;
+    background-color: lightgrey;
+    text-decoration: none;
+    color: grey;
+}
+
+footer{
+    height: 10em;
+}
+/* body{
     background: #ffffff;
     background-color: var(--main-color);
     display: flex;
@@ -28,6 +131,13 @@ form{
     height: fit-content;
     background-color: white;
     flex-direction: column;
+}
+
+legend{
+        flex-direction: column;
+    font-size: 1.2em;
+    color: var(--second-color);
+    font-weight: bold;
 }
 
 form > legend{
@@ -71,3 +181,4 @@ img{
     position: absolute;
     height: fit-content;
 }
+ */
