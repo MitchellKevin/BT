@@ -13,11 +13,11 @@ Hoe lang ben ik er mee bezig geweest?
 van 12:00-16:00
 
 Wat ga ik morgen doen?
-* De andere pagina's de zelfde stijl maken
-* Een terug knop maken
-* Meer de huistijl toepassen en in de root alle variablen aanmaken voor de styling.
-* Tweede pagina maken
-* Paterns toepassen
+* De andere pagina's de zelfde stijl maken(V)
+* Een terug knop maken (V)
+* Meer de huistijl toepassen en in de root alle variablen aanmaken voor de styling.(V)
+* Tweede pagina maken(X)
+* Paterns toepassen(X)
 
 Concept:
 ![alt text](/imgimage.png)

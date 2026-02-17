@@ -29,17 +29,16 @@ section{
 h2{
     text-align: center;
     padding: 1em 0 1em 0;
-    background-color: lightgrey;
+    background-color: rgb(255, 0, 0);
     margin-bottom: 1em;
     font-size: 1em;
-    color: var(--second-color);
+    color: white;
 
 }
 
 fieldset{
     border: none;
     color: var(--second-color);
-    margin: 0;
 }
 
 .q{
@@ -53,7 +52,7 @@ label{
     color: var(--second-color);
     display: flex;
     flex-direction: column;
-
+    font-size: 1.1em;
 }
 
 
@@ -66,7 +65,6 @@ input{
 }
 
 input[type="radio"]{
-    width: 3em;
     accent-color: var(--second-color);
 }
 
@@ -76,8 +74,9 @@ legend{
 }
 
 .title{
-    font-size: 1.4em;
-    margin-bottom: .8em;
+    font-size: 1.8em;
+    margin-bottom: .2em;
+    margin-left:.5em;
 }
 
 .buttonSection{
@@ -102,6 +101,30 @@ a{
     background-color: lightgrey;
     text-decoration: none;
     color: grey;
+}
+
+input[name="Voorletters"]{
+    width: 20%;
+}
+
+input[name="Tussenvoegsels"]{
+    width: 30%;
+}
+
+input[name="Achternaam"]{
+    width: 48%;
+}
+
+.gegevensOverledene{
+    display: flex;
+    gap: .5%;
+    flex-wrap: wrap;
+}
+
+.radioButtons{
+    display: flex;
+    align-items: center;
+    gap: .5em;
 }
 
 footer{
