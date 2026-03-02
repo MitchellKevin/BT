@@ -28,28 +28,23 @@
                     <label>
                         <div class="q">Voorletter(s), tussen-voegsel(s) en achternaam</div>
                         <div class="gegevensOverledene">
-                            <input type="text" name="Voorletters" value="">
+                            <input type="text" name="Voorletters" value="" required minlength="1" pattern="[Aa-Zz]" title="Vul voorletters naar behoren in">
                             <input type="text" name="Tussenvoegsels" value="">
-                            <input type="text" name="Achternaam" value="">
+                            <input type="text" name="Achternaam" value="" required minlength="1" pattern="[Aa-Zz]" title="Vul achternaam naar behoren in">
                         </div>
                     </label>
                     <label>
                         <div class="q">Bsn overledene</div>
                         <div class="bsn">
-                            <input type="text" id="bsnNr1" maxlength="1">
-                            <input type="text" id="bsnNr2" maxlength="1">
-                            <input type="text" id="bsnNr3" maxlength="1">
-                            <input type="text" id="bsnNr4" maxlength="1">
-                            <input type="text" id="bsnNr5" maxlength="1">
-                            <input type="text" id="bsnNr6" maxlength="1">
-                            <input type="text" id="bsnNr7" maxlength="1">
-                            <input type="text" id="bsnNr8" maxlength="1">
-                            <input type="text" id="bsnNr9" maxlength="1">
+                            <input type="text" id="bsn" maxlength="9"   inputmode="numeric"
+  pattern="^[0-9]{9}$"
+  title="BSN moet uit 9 cijfers bestaan"
+  required>
                         </div>
                     </label>
                     <label>
                         <div class="q">Overlijdendatum</div>
-                        <input type="date">
+                        <input type="date" required>
                     </label>
                 </fieldset>
                 </section>
@@ -58,23 +53,22 @@
                     <legend>
                         Huwelijk
                     </legend>
-                    <label>
+                    <label class="test">
                         <div class="q">Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</div>
                         <div class="radioButtons">
                             <input type="radio" name="1b_1" value="nee">
                             <span>Nee</span>
                         </div>
                         <div class="radioButtons">
-                            <input type="radio" name="1b_1" value="ja">
+                            <input type="radio" id="1b_1_ja" name="1b_1" value="ja">
                             <span>Ja</span>
                         </div>
                     </label>
-                        <br><br>
 
-                        <label>
+                        <label class="followUp">
                             <div class="q">Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of parnetscahpsvoorwaarden laten vastleggen in een notriale akte?</div>
                          <div class="radioButtons">
-                            <input type="radio" name="1b_2" value="nee">
+                            <input type="radio" id="1b_2" value="nee">
                             <label>Nee</label>
                         </div>
                         <div class="radioButtons">
@@ -83,7 +77,6 @@
                         </div>
                     </label>
 
-                    <br><br>
 
                     <label>
                         <div class="q">Had de overledene en diens partner een finaal verrekenbeding?</div>
@@ -97,11 +90,10 @@
                         </div>
                     </label>
 
-                    <br><br>
 
                     <label>
                         <div class="q">Datum huwelijkse of partnerschapsvoorwaarden</div>
-                        <input type="date" name="1b_4">
+                        <input type="date" name="1b_4" required>
                     </label>
                     </fieldset>
                 </fieldset>
@@ -121,7 +113,6 @@
                         </div>
                     </fieldset>
 
-                    <br><br>
 
                     <fieldset>
                         <div class="q">Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?</div>
@@ -135,7 +126,6 @@
                         </div>
                     </fieldset>
 
-                    <br><br>
 
                     <fieldset>
                         <div class="q">Had dit overleden kind zelf kinderen?</div>
@@ -169,26 +159,26 @@
                     <br><br>
                     <label>
                         <div class="q">Protocolnummer notaris</div>
-                        <input type="number" name="1d_2">
+                        <input type="number" name="1d_2" required>
                     </label>
                     <br><br>
                     <label>
                         <div class="q">Voorletter(s), tussen-voegsel(s) en achternaam</div>
                         <div class="gegevensOverledene">
-                            <input type="text" name="Voorletters">
+                            <input type="text" name="Voorletters" required>
                             <input type="text" name="Tussenvoegsels">
-                            <input type="text" name="Achternaam">
+                            <input type="text" name="Achternaam" required>
                         </div>
                     </label>
                     <br><br>
                     <label>
                         <div class="q">Protocolnummer notaris</div>
-                        <input type="text" name="1d_4">
+                        <input type="text" name="1d_4" required>
                     </label>
                     <br><br>
                     <label>
                         <div class="q">Protocolnummer notaris</div>
-                        <input type="date" name="1d_5">
+                        <input type="date" name="1d_5" required>
                     </label>
                 </fieldset>
                 </section>

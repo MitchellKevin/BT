@@ -76,3 +76,26 @@ window.addEventListener('load', () => {
         });
     }
 });
+
+
+// const q3 = document.querySelector('.q1');
+// const q4 = document.querySelector('.q2');
+
+// if(q3.value='ja'){
+//     console.log(q3.value);
+//     q4.style.display="block";
+// }else{
+//     q4.style.display="none"
+// }
+
+function isValidBSN(bsn) {
+  if (!/^\d{9}$/.test(bsn)) return false;
+
+  let sum = 0;
+  for (let i = 0; i < 9; i++) {
+    sum += (9 - i) * parseInt(bsn[i], 10);
+  }
+  return sum % 11 === 0;
+
+  
+}
