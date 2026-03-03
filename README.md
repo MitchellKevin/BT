@@ -30,10 +30,22 @@ Hoe ik ervoor kan zorgen dat ik met meerdere input velden, een geheel kan maken 
 Hoeveel tijd heeft het me gekost:
 12:00-15:45
 
-TO DO voor morgen:
+TO DO:
 * (Optional)NS API gebruiken en de storingen vermelden(2U)
 * Radio buttons omzetten naar de HIG (![alt text](image.png))(1U)
 * Patterns, regex(1U)
 * Responsive(1U)
 * Progressive disclosure(2U with hidden)
 * LocalStorage gebruiken voor tijdelijke cookies(30M)
+
+
+Wat heb ik geleerd:
+Html validatie met patterns en tijdens mijn cursus ook hoe je met javascript validatie doet alleen dit heb ik nog niet toegepast
+
+Hoeveel tijd heeft dit me gekost:
+De hele les dag van 9:30-16:30
+
+TODO:
+* Progressive disclosure met CSS
+* Local storage met tijdelijke cookies
+* template == goed
