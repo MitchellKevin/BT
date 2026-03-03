@@ -71,7 +71,7 @@ label{
     border: 3px solid red;
 }
 
-input{
+input[type="text"],input[type="date"]{
     margin-top: .4em;
     font-size: 1em;
     border-radius: .2em;
@@ -162,5 +162,5 @@ input:user-invalid{
 }
 
 #1b_1_ja:checked ~ .followup {
-  border: 3px solid red;
+  border: 3px solid;
 }

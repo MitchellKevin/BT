@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verkrijger</title>
+    <link rel="stylesheet" href="style.css"
+</head>
+<body>
+<div id="forms-container">
+  <form id="verkrijgerInfo">
+    <input type="text" name="BSN/RSIN" placeholder="BSN/RSIN">
+    <input type="text" name="Voorletters" placeholder="Voorletter(s)">
+    <input type="text" name="Tussenvoegsels" placeholder="Tussenvoegsels">
+    <input type="text" name="Achternaam" placeholder="Achternaam">
+    <fieldset>
+        <legend>Familie geschiedenis overleden</legend>
+        <fieldset>
+            <div class="radioButtons">
+                <input type="radio" name="verkrijgerHeleVermogen" value="nee">
+                <label>Nee</label>
+            </div>
+            <div class="radioButtons">
+                <input type="radio" name="verkrijgerHeleVermogen" value="ja">
+                <label>Ja</label>
+            </div>
+    </fieldset>
+  </form>
+</div>
+
+<button type="button" onclick="addForm()">+ Voeg formulier toe</button>
+<button type="button" onclick="submitAll()">Submit alles</button>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
+

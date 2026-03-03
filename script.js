@@ -1,4 +1,6 @@
 // BSN https://jsfiddle.net/4m5fg/6/
+let formCount = 1;
+
 var bsnNr1 = document.getElementById("bsnNr1"),
     bsnNr2 = document.getElementById("bsnNr2"),
     bsnNr3 = document.getElementById("bsnNr3");
@@ -59,23 +61,23 @@ bsnNr8.onkeyup = function() {
 
 
 // Save data on input
-const form = document.querySelector('form');
-form.addEventListener('input', () => {
-    const formData = new FormData(form);
-    const formObj = Object.fromEntries(formData.entries());
-    localStorage.setItem('formData', JSON.stringify(formObj));
-});
+// const form = document.querySelector('form');
+// form.addEventListener('input', () => {
+//     const formData = new FormData(form);
+//     const formObj = Object.fromEntries(formData.entries());
+//     localStorage.setItem('formData', JSON.stringify(formObj));
+// });
 
-// Load data on page load
-window.addEventListener('load', () => {
-    const savedData = localStorage.getItem('formData');
-    if (savedData) {
-        const data = JSON.parse(savedData);
-        Object.keys(data).forEach(key => {
-            if (form.elements[key]) form.elements[key].value = data[key];
-        });
-    }
-});
+// // Load data on page load
+// window.addEventListener('load', () => {
+//     const savedData = localStorage.getItem('formData');
+//     if (savedData) {
+//         const data = JSON.parse(savedData);
+//         Object.keys(data).forEach(key => {
+//             if (form.elements[key]) form.elements[key].value = data[key];
+//         });
+//     }
+// });
 
 
 // const q3 = document.querySelector('.q1');
@@ -98,4 +100,59 @@ function isValidBSN(bsn) {
   return sum % 11 === 0;
 
   
+}
+
+
+// function addField() {
+//   const form = document.getElementById("verkrijgerInfo");
+//   const q1 = document.createElement("input");
+//   q1.type = "text";
+//   q1.name = "BSN/RSIN";
+//   q1.placeholder = "BSN/RSIN";
+//   form.insertBefore(q1, form.lastElementChild);
+// }
+
+
+
+document.getElementById("addFormBtn").addEventListener("click", addForm);
+document.getElementById("submitAllBtn").addEventListener("click", submitAll);
+
+function addForm() {
+  const container = document.getElementById("forms-container");
+  const original = document.getElementById("verkrijgerInfo");
+  const clone = original.cloneNode(true);
+  formCount++;
+
+  clone.id = "verkrijgerInfo_" + formCount;
+
+  clone.querySelectorAll("input").forEach(input => {
+    if (input.type === "radio") {
+      input.name = "verkrijgerHeleVermogen_" + formCount;
+      input.checked = false;
+    } else {
+      input.value = "";
+    }
+  });
+
+  container.appendChild(clone);
+}
+
+function submitAll() {
+  const container = document.getElementById("forms-container");
+  const forms = container.querySelectorAll("form");
+
+  const payload = [];
+
+  forms.forEach(form => {
+    const formData = new FormData(form);
+    const entry = {};
+
+    for (const [key, value] of formData.entries()) {
+      entry[key] = value;
+    }
+
+    payload.push(entry);
+  });
+
+  console.log("Te versturen data:", payload);
 }

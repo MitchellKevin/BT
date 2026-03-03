@@ -49,3 +49,14 @@ TODO:
 * Progressive disclosure met CSS
 * Local storage met tijdelijke cookies
 * template == goed
+
+
+
+// naam.setCutsomValidity("dksjflkadsf") of ipv naam event.target ...
+
+// form.validity()
+
+// label:has(input:invalid) + .error{
+// display: block}
+
+// area-descripedby="id van de error"
