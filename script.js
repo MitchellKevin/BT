@@ -137,6 +137,7 @@ function addForm() {
   container.appendChild(clone);
 }
 
+// Met assistentie van AI Perplexity
 function submitAll() {
   const container = document.getElementById("forms-container");
   const forms = container.querySelectorAll("form");

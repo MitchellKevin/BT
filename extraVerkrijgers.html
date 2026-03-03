@@ -4,33 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verkrijger</title>
-    <link rel="stylesheet" href="style.css"
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="forms-container">
-  <form id="verkrijgerInfo">
-    <input type="text" name="BSN/RSIN" placeholder="BSN/RSIN">
-    <input type="text" name="Voorletters" placeholder="Voorletter(s)">
-    <input type="text" name="Tussenvoegsels" placeholder="Tussenvoegsels">
-    <input type="text" name="Achternaam" placeholder="Achternaam">
-    <fieldset>
-        <legend>Familie geschiedenis overleden</legend>
-        <fieldset>
-            <div class="radioButtons">
-                <input type="radio" name="verkrijgerHeleVermogen" value="nee">
-                <label>Nee</label>
-            </div>
-            <div class="radioButtons">
-                <input type="radio" name="verkrijgerHeleVermogen" value="ja">
-                <label>Ja</label>
-            </div>
-    </fieldset>
-  </form>
-</div>
+    <header>
+        <img src="img/logo.png" width="115em" height="85em">
+        <div class="headerMenu">
+            <img src="account.png" width="30em" height="30em">
+            <img src="menu.png" width="30em" height="30em">
+        </div>
+    </header>
+    <main>
+        <h2>Dit is een schoolproject</h2>
+        <div id="forms-container">
+        <form id="verkrijgerInfo">
+            <input type="text" name="BSN/RSIN" placeholder="BSN/RSIN">
+            <input type="text" name="Voorletters" placeholder="Voorletter(s)">
+            <input type="text" name="Tussenvoegsels" placeholder="Tussenvoegsels">
+            <input type="text" name="Achternaam" placeholder="Achternaam">               
+            <fieldset>
+                <legend class="q3">Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?</legend>
+                <div class="radioButtons">
+                    <input type="radio" name="verkrijgerHeleVermogen" value="nee">
+                    <label>Nee</label>
+                </div>
+                <div class="radioButtons">
+                    <input type="radio" name="verkrijgerHeleVermogen" value="ja">
+                    <label>Ja</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend class="q4">Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</legend>
+                <div class="radioButtons">
+                    <input type="radio" name="verkrijgerHeleVermogen" value="nee">
+                    <label>Nee</label>
+                </div>
+                <div class="radioButtons">
+                    <input type="radio" name="verkrijgerHeleVermogen" value="ja">
+                    <label>Ja</label>
+                </div>
+            </fieldset>
+        </form>
+        </div>
 
-<button type="button" onclick="addForm()">+ Voeg formulier toe</button>
-<button type="button" onclick="submitAll()">Submit alles</button>
-
+        <button type="button" onclick="addForm()">+ Voeg formulier toe</button>
+        <button type="button" onclick="submitAll()">Submit alles</button>
+    </main>
 
 
     <script src="script.js"></script>
