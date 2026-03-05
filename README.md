@@ -60,3 +60,14 @@ TODO:
 // display: block}
 
 // area-descripedby="id van de error"
+
+
+Wat heb ik vandaag geleerd:
+Ik heb vandaag dezelfde workshop gevolgd over javascript validatie als herhaling en verder heb ik een tweede onderwerp gemaakt waar je verkrijgers kan toevoegen en versturen
+
+Hoeveel tijd heb ik besteed:
+12:00-16:00
+
+TODO
+* Progressive disclosure voor de vragen
+* Javascript Validatie
