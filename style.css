@@ -156,14 +156,15 @@ input:user-invalid{
     border: red 2px solid;
 }
 
-/* hide second question by default */
-.followUp {
-  display: block;
+.followUp{
+    display: none;
 }
 
-#1b_1_ja:checked ~ .followup {
-  border: 3px solid;
+/* hide second question by default */
+#b1_1_ja:checked ~ .followUp{
+    display: block;
 }
+
 
 .q3, .q4{
     padding-top: 1em;
