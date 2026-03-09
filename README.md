@@ -72,5 +72,14 @@ TODO
 * Progressive disclosure voor de vragen
 * Javascript Validatie
 
+Wat heb ik vandaag gedaan:
+Ik vandaag gewerkt aan custom error berichten en ik heb vandaag een workshop gevolgd over toegankelijkheid bij Js validatie
+
+Hoeveel tijd heeft me dat gekost:
+Dit heeft me van 11:30-12:30 gekost bij de workshop en de rest van de dag met de custom error berichten onder de input velden
+
+TODO:
+* Progressive disclosure
+* README bijwerken
 
 <!-- Data list voor landcode -->
