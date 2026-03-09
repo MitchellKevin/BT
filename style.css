@@ -1,173 +1,196 @@
-:root{
-    --main-color:#ffc917;
-    --second-color:#003082;
-    --third-color: #0063d3;
-}
-
-*{
-    margin: 0;
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-}
-body{
-    background-color: var(--main-color);
+:root {
+  --ns-yellow: #ffc917;
+  --ns-blue: #003082;
+  --ns-blue-light: #0063d3;
+  --border: #d6d6d6;
+  --background: #f7f7f7;
 }
 
 
-header{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    background-color: white;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
 }
 
-.headerMenu{
-    display: flex;
-    margin-right: 1em;
-    align-items: center;
-    gap: 1rem;
+body {
+  font-family: "Roboto", sans-serif;
+  background: var(--background);
+  color: #222;
+  background-color: var(--ns-yellow);
 }
 
-section{
-    margin-top: 2em;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: white;
 }
 
-h2{
-    text-align: center;
-    padding: 1em 0 1em 0;
-    background-color: rgb(255, 0, 0);
-    margin-bottom: 1em;
-    font-size: 1em;
-    font-weight: 400;
-    color: white;
-
-}
-
-fieldset{
-    border: none;
-    color: var(--second-color);
-}
-
-.q{
-    font-size: 1.1em;
-    color: black;
-    margin-top: .8em;
+.headerMenu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 
-
-label{
-    margin-top: .4em;
-    color: var(--second-color);
-    display: flex;
-    flex-direction: column;
-    font-size: 1em;
+main {
+  max-width: 700px;
+  margin: auto;
+  padding: 2rem 1rem;
 }
 
-.q2{
+section {
+  margin-top: 2rem;
+}
+
+
+h2 {
+  text-align: center;
+  background: #d9381e;
+  color: white;
+  padding: .8rem;
+  font-size: .95rem;
+  font-weight: 400;
+}
+
+
+fieldset {
+  border: none;
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+legend {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ns-blue);
+  margin-bottom: 1rem;
+}
+
+form > fieldset > legend{
+    padding: 5em 1em 0em 1em;
+    font-size: 1.6rem;
+}
+
+.title {
+  font-size: 1.8rem;
+}
+
+
+.q {
+  font-size: 1rem;
+  margin-bottom: .3rem;
+  font-weight: 500;
+}
+
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  width: 100%;
+  padding: .6rem .7rem;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--ns-blue-light);
+  box-shadow: 0 0 0 2px rgba(0, 99, 211, 0.2);
+}
+
+input:user-invalid {
+  border-color: red;
+}
+
+
+.gegevensOverledene {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: .5rem;
+}
+
+.radioButtons {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .5rem;
+}
+
+input[type="radio"] {
+  accent-color: var(--ns-blue);
+}
+
+
+.followUp {
+  display: block;
+  margin-top: 1rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--ns-blue);
+}
+
+
+.buttonSection {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+button {
+  background: var(--ns-blue);
+  color: white;
+  border: none;
+  padding: .9rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--ns-blue-light);
+}
+
+a {
+  text-align: center;
+  padding: .8rem;
+  border: 2px solid var(--ns-blue);
+  color: var(--ns-blue);
+  text-decoration: none;
+  background: white;
+}
+
+
+
+footer {
+  height: 6rem;
+}
+
+.error_naam, .error_bsn, .error_notaris{
+    color: red;
     display: none;
-    border: 3px solid red;
-}
-
-input[type="text"],input[type="date"], input[type="number"]{
-    margin-top: .4em;
-    font-size: 1em;
-    border-radius: .2em;
-    border: none;
-    height: 2.5em;
-    padding: 0 0 0 0.5em;
-}
-
-input[type="radio"]{
-    accent-color: var(--second-color);
-}
-
-legend{
-    font-size: 1.2em;
-    font-weight: 600;
-}
-
-.title{
-    font-size: 1.8em;
-    margin-bottom: .2em;
-    margin-left:.5em;
-}
-
-.buttonSection{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: .3em;
-}
-
-button, a{
-    width: 95%;
-    font-size: 1.1em;
-    padding: 1em;
-    border: solid rgb(173, 173, 173) .1em;
-    color: white;
-    background-color: var(--third-color);
-    border-radius: .2em;
-    font-weight: 500;
-}
-
-a{
-    width: 89%;
-    text-align: center;
-    background-color: var(--main-color);
-    text-decoration: none;
-    color: var(--third-color);
-}
-
-input[name="Voorletters"]{
-    width: 20%;
-}
-
-input[name="Tussenvoegsels"]{
-    width: 30%;
-}
-
-input[name="Achternaam"]{
-    width: 44%;
-}
-
-.gegevensOverledene{
-    display: flex;
-    gap: .5%;
-    flex-wrap: wrap;
-}
-
-.radioButtons{
-    display: flex;
-    align-items: center;
-    gap: .5em;
-    position: relative;
-}
-
-footer{
-    height: 10em;
-}
-
-input:user-invalid{
-    border: red 2px solid;
-}
-
-.followUp{
-    display: none;
-}
-
-/* hide second question by default */
-#b1_1_ja:checked ~ .followUp{
-    display: block;
 }
 
 
-.q3, .q4{
-    padding-top: 1em;
-    font-size: 1em;
-    color: black;
+fieldset:has(input[name="achternaam"]:user-invalid, input[name="voornaam"]:user-invalid) {
+    .error_naam{
+        display: block;
+    }
+}
+
+fieldset:has(input[name="bsn"]:user-invalid) {
+    .error_bsn{
+        display: block;
+    }
+}
+
+fieldset:has(input[name="notaris"]:user-invalid) {
+    .error_notaris{
+        display: block;
+    }
 }
