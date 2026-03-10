@@ -55,10 +55,10 @@ function submitAll() {
   console.log("Te versturen data:", payload);
 }
 
+// LocalHost auto save
 const form = document.querySelector("#form");
 const STORAGE_KEY = "autosave_form";
 
-/* FORM HERSTELLEN BIJ LADEN */
 const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
 if (savedData) {
@@ -83,7 +83,6 @@ if (savedData) {
 
 }
 
-/* AUTOSAVE BIJ WIJZIGEN */
 form.addEventListener("input", () => {
 
   const data = Object.fromEntries(new FormData(form));
