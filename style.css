@@ -37,7 +37,7 @@ header {
 
 
 main {
-  max-width: 700px;
+  max-width: 750px;
   margin: auto;
   padding: 2rem 1rem;
 }
@@ -107,6 +107,12 @@ input:focus {
 
 input:user-invalid {
   border-color: red;
+  background-color:rgba(244, 102, 102, 0.1);
+}
+
+input:user-valid{
+    border-color: green;
+    background-color:rgba(120, 218, 117, 0.1);
 }
 
 
@@ -197,4 +203,14 @@ fieldset:has(input[name="notaris"]:user-invalid) {
 
 span{
     color: red;
+}
+
+.followUp{
+    display: none;
+}
+
+fieldset:has(input[id="married_yes"]:checked){
+    .followUp{
+        display: block;
+    }
 }
