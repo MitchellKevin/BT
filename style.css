@@ -11,7 +11,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
+  margin: 0; 
 }
 
 body {
@@ -41,6 +41,7 @@ main {
   margin: auto;
   padding: 2rem 1rem;
 }
+
 
 section {
   margin-top: 2rem;
@@ -106,12 +107,12 @@ input:focus {
 }
 
 input:user-invalid {
-  border-color: red;
+  border-color: rgba(255, 0, 0, 0.7);
   background-color:rgba(244, 102, 102, 0.1);
 }
 
 input:user-valid{
-    border-color: green;
+    border-color: rgba(37, 159, 37, 0.7);
     background-color:rgba(120, 218, 117, 0.1);
 }
 
@@ -134,7 +135,7 @@ input[type="radio"] {
 }
 
 
-.followUp {
+.followUp, .followUp2 {
   display: block;
   margin-top: 1rem;
   padding-left: 1rem;
@@ -178,7 +179,7 @@ footer {
 }
 
 .error_naam, .error_bsn, .error_notaris{
-    color: red;
+    color: rgb(255, 0, 0, 0.9);
     display: none;
 }
 
@@ -208,9 +209,20 @@ span{
 .followUp{
     display: none;
 }
+.followUp2{
+    display: none;
+}
+
 
 fieldset:has(input[id="married_yes"]:checked){
     .followUp{
         display: block;
     }
+    fieldset:has(input[id="conditions_yes"]:checked){
+    .followUp2{
+        display: block;
+    }
 }
+}
+
+

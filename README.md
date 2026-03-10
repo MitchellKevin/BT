@@ -82,4 +82,10 @@ TODO:
 * Progressive disclosure
 * README bijwerken
 
+TODO:
+* README bijwerken
+* Progressive disclosure bij de rest van de vragen
+* Tweede pagina vormgeven
+* 
+
 <!-- Data list voor landcode -->

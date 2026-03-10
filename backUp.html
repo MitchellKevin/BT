@@ -20,7 +20,7 @@
 
     <main>
 
-      <form>
+      <form id="form">
         <fieldset>
           <legend>Erfenisbelasting aangeven</legend>
 
@@ -33,6 +33,7 @@
 
             <div class="gegevensOverledene">
               <input
+                id="voornaam"
                 type="text"
                 name="voorletters"
                 required
@@ -47,6 +48,7 @@
               />
 
               <input
+                id="achternaam"
                 type="text"
                 name="achternaam"
                 required
@@ -78,7 +80,7 @@
               ><div class="q">Overlijdensdatum<span>*</span></div></label
             >
 
-            <input type="date" id="overlijden" required />
+            <input type="date" id="overlijden" name="overlijden" required />
           </fieldset>
 
           <!-- HUWELIJK -->
@@ -130,7 +132,7 @@
                   <label for="conditions_yes">Ja</label>
                 </div>
             </div>
-            <div class="followUp">
+            <div class="followUp2">
               <fieldset>
 
                 <div class="q">
@@ -209,10 +211,58 @@ verrekenbeding? <span>*</span>
         <div class="buttonSection">
           <button type="submit">Verstuur aanvraag</button>
 
+        <button onclick="store()" type="button">Store Form Data</button>
           <a href="https://github.com/MitchellKevin/BT.git">Bekijk de code</a>
         </div>
         </fieldset>
       </form>
     </main>
   </body>
+  <script>
+    const form = document.getElementById("form");
+const STORAGE_KEY = "erfenisForm";
+
+/* FORM OPSLAAN */
+form.addEventListener("input", () => {
+
+  const data = {};
+  const formData = new FormData(form);
+
+  formData.forEach((value, key) => {
+    data[key] = value;
+  });
+
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+
+});
+
+/* FORM TERUGZETTEN */
+window.addEventListener("DOMContentLoaded", () => {
+
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (!saved) return;
+
+  const data = JSON.parse(saved);
+
+  Object.keys(data).forEach(name => {
+
+    const field = form.elements[name];
+    if (!field) return;
+
+    if (field.type === "radio") {
+
+      const radio = form.querySelector(`input[name="${name}"][value="${data[name]}"]`);
+      if (radio) radio.checked = true;
+
+    } else {
+
+      field.value = data[name];
+
+    }
+
+  });
+
+});
+  </script>
+  <script src="script.js"></script>
 </html>
