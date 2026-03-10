@@ -82,11 +82,22 @@ TODO:
 * Progressive disclosure
 * README bijwerken
 
-TODO:
+
+Wat heb ik vandaag gedaan:
+Ik heb progressive disclosure gemaakt bij de vragen, ik heb error styling toegepast, localhost toegevoegd en radio buttons gestyled.
+
+Hoeveel tijd heeft die me gekost:
+Progressive disclosure: 2U
+error styling: 0,5U
+Localhost: 3U
+Radio buttons styling: 1U
+
+TODO voor morgen:
 * README bijwerken
-* Progressive disclosure bij de rest van de vragen
+* Progressive disclosure bij de rest van de vragen toepassen
 * Tweede pagina vormgeven
-* 
+* Werken aan tweede pagina
+* Hints toepassen(extra info)
 
 
 <!-- Data list voor landcode -->
