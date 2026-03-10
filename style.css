@@ -247,7 +247,7 @@ span{
 
 .radio input:checked + .name {
   background-color: var(--ns-blue);
-  color: var(--background);
+  color: #EEE;
   font-weight: 500;
 }
 
