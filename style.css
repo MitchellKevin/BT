@@ -209,10 +209,6 @@ span{
 .followUp{
     display: none;
 }
-.followUp2{
-    display: none;
-}
-
 
 fieldset:has(input[id="married_yes"]:checked){
     .followUp{
@@ -224,5 +220,6 @@ fieldset:has(input[id="married_yes"]:checked){
     }
 }
 }
+
 
 
