@@ -98,6 +98,8 @@ TODO voor morgen:
 * Tweede pagina vormgeven
 * Werken aan tweede pagina
 * Hints toepassen(extra info)
+* Js validatie
+* Font toevoegen
 
 
 <!-- Data list voor landcode -->

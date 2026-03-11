@@ -55,38 +55,3 @@ function submitAll() {
   console.log("Te versturen data:", payload);
 }
 
-// LocalHost auto save
-const form = document.querySelector("#form");
-const STORAGE_KEY = "autosave_form";
-
-const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
-
-if (savedData) {
-
-  Object.entries(savedData).forEach(([name, value]) => {
-
-    const field = form.elements[name];
-    if (!field) return;
-
-    if (field.type === "radio") {
-
-      const radio = form.querySelector(`input[name="${name}"][value="${value}"]`);
-      if (radio) radio.checked = true;
-
-    } else {
-
-      field.value = value;
-
-    }
-
-  });
-
-}
-
-form.addEventListener("input", () => {
-
-  const data = Object.fromEntries(new FormData(form));
-
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-
-});
