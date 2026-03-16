@@ -1,58 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="nl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verkrijger</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Verkrijgers</title>
 </head>
+
 <body>
-    <header>
-        <img src="img/logo.png" width="115em" height="85em">
-        <div class="headerMenu">
-            <img src="account.png" width="30em" height="30em">
-            <img src="menu.png" width="30em" height="30em">
-        </div>
-    </header>
-    <main>
-        <h2>Dit is een schoolproject</h2>
-        <div id="forms-container">
-        <form id="verkrijgerInfo">
-            <input type="text" name="BSN/RSIN" placeholder="BSN/RSIN">
-            <input type="text" name="Voorletters" placeholder="Voorletter(s)">
-            <input type="text" name="Tussenvoegsels" placeholder="Tussenvoegsels">
-            <input type="text" name="Achternaam" placeholder="Achternaam">               
-            <fieldset>
-                <legend class="q3">Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?</legend>
-                <div class="radioButtons">
-                    <input type="radio" name="verkrijgerHeleVermogen" value="nee">
-                    <label>Nee</label>
-                </div>
-                <div class="radioButtons">
-                    <input type="radio" name="verkrijgerHeleVermogen" value="ja">
-                    <label>Ja</label>
-                </div>
-            </fieldset>
-            <fieldset>
-                <legend class="q4">Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</legend>
-                <div class="radioButtons">
-                    <input type="radio" name="verkrijgerHeleVermogen" value="nee">
-                    <label>Nee</label>
-                </div>
-                <div class="radioButtons">
-                    <input type="radio" name="verkrijgerHeleVermogen" value="ja">
-                    <label>Ja</label>
-                </div>
-            </fieldset>
-        </form>
-        </div>
 
-        <button type="button" onclick="addForm()">+ Voeg formulier toe</button>
-        <button type="button" onclick="submitAll()">Submit alles</button>
-    </main>
+<header>
+
+<img src="img/logo.png" alt="Logo" width="115" height="85">
+
+<div class="headerMenu">
+<img src="account.png" alt="Account" width="30" height="30">
+<img src="menu.png" alt="Menu" width="30" height="30">
+</div>
+
+</header>
+
+<h2>Dit is een schoolproject</h2>
+
+<main>
+
+<form id="verkrijgersForm">
+
+<fieldset>
+
+<legend>Verkrijgers</legend>
+
+<div id="forms-container">
+
+<fieldset class="verkrijger">
+
+<legend>Verkrijger</legend>
+
+<div class="q">BSN / RSIN</div>
+<input type="text" name="bsn">
+
+<div class="q">Voorletter(s)</div>
+<input type="text" name="voorletters">
+
+<div class="q">Tussenvoegsels</div>
+<input type="text" name="tussenvoegsels">
+
+<div class="q">Achternaam</div>
+<input type="text" name="achternaam">
 
 
-    <script src="script.js"></script>
+<fieldset>
+
+<legend>Krijgt deze verkrijger het hele vermogen?</legend>
+
+<div class="radioButtons">
+<input type="radio" name="heleVermogen" value="nee">
+<label>Nee</label>
+</div>
+
+<div class="radioButtons">
+<input type="radio" name="heleVermogen" value="ja">
+<label>Ja</label>
+</div>
+
+</fieldset>
+
+
+<fieldset>
+
+<legend>Doet deze verkrijger een beroep op diens legitieme portie?</legend>
+
+<div class="radioButtons">
+<input type="radio" name="legitiemePortie" value="nee">
+<label>Nee</label>
+</div>
+
+<div class="radioButtons">
+<input type="radio" name="legitiemePortie" value="ja">
+<label>Ja</label>
+</div>
+
+</fieldset>
+
+</fieldset>
+
+</div>
+
+<div class="buttonSection">
+
+<button type="button" id="addFormBtn">
++ Voeg verkrijger toe
+</button>
+
+<button type="button" id="submitAllBtn">
+Opslaan
+</button>
+
+<a href="summary.html">Verder</a>
+
+</div>
+
+</fieldset>
+
+</form>
+
+</main>
+
+<script src="script.js"></script>
+
 </body>
 </html>
-

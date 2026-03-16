@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Samenvatting</title>
+</head>
+
+<body>
+
+<header>
+<img src="img/logo.png" alt="Logo" width="115" height="85">
+
+<div class="headerMenu">
+<img src="account.png" alt="Account" width="30" height="30">
+<img src="menu.png" alt="Menu" width="30" height="30">
+</div>
+</header>
+
+<h2>Dit is een schoolproject</h2>
+
+<main>
+
+<section>
+
+<fieldset>
+
+<legend>Controleer uw gegevens</legend>
+
+<div id="summary"></div>
+
+<br>
+
+<div class="buttonSection">
+
+<a href="backUp.html">Gegevens aanpassen</a>
+
+<button id="confirm">Definitief versturen</button>
+
+</div>
+
+</fieldset>
+
+</section>
+
+</main>
+
+<script>
+
+const data = JSON.parse(localStorage.getItem("erfenisForm"));
+
+const container = document.getElementById("summary");
+
+if(data){
+
+container.innerHTML = `
+<p><strong>Voorletters:</strong> ${data.voorletters || ""}</p>
+<p><strong>Tussenvoegsel:</strong> ${data.tussenvoegsel || ""}</p>
+<p><strong>Achternaam:</strong> ${data.achternaam || ""}</p>
+<p><strong>BSN:</strong> ${data.bsn || ""}</p>
+<p><strong>Overlijdensdatum:</strong> ${data.overlijden || ""}</p>
+
+<br>
+
+<p><strong>Getrouwd:</strong> ${data.married || ""}</p>
+<p><strong>Huwelijkse voorwaarden:</strong> ${data.conditions || ""}</p>
+<p><strong>Verrekenbeding:</strong> ${data.verrekenbeding || ""}</p>
+
+<br>
+
+<p><strong>Kinderen:</strong> ${data.kids || ""}</p>
+
+<br>
+
+<p><strong>Testament:</strong> ${data.will || ""}</p>
+<p><strong>Notaris protocolnummer:</strong> ${data.notaris || ""}</p>
+`;
+
+}
+
+document.getElementById("confirm").addEventListener("click", () => {
+
+alert("Aanvraag verzonden");
+
+localStorage.removeItem("erfenisForm");
+
+});
+
+</script>
+
+</body>
+</html>
