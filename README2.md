@@ -17,7 +17,7 @@ De eisen voor dit project waren als volgt:
     * Hints toepassen
 
 
-## <p style="color: #FFC917;">Dit is geel</p>
+## Doel
 Het doel van de website is dus een platfrom waar gebruikers hun erfenisbelasting aangifte kunnen uitvoeren. Hier zitten dan natuurlijk ook wat eisen aan:
 * Iedereen moet het kunnen gebruiken / het is toegankelijk
 * Robuust zijn
