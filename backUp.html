@@ -1,269 +1,316 @@
 <!doctype html>
 <html lang="nl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Erfenisbelasting formulier</title>
-  </head>
 
-  <body>
-    <header>
-      <img src="img/logo.png" alt="Logo" width="115" height="85" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Erfenisbelasting formulier</title>
+</head>
 
-      <div class="headerMenu">
-        <img src="account.png" alt="Account" width="30" height="30" />
-        <img src="menu.png" alt="Menu" width="30" height="30" />
-      </div>
-    </header>
-      <h2>Dit is een schoolproject</h2>
+<body>
+  <header>
+    <img src="img/logo.png" alt="Logo" width="115" height="85" />
 
-    <main>
+    <div class="headerMenu">
+      <img src="account.png" alt="Account" width="30" height="30" />
+      <img src="menu.png" alt="Menu" width="30" height="30" />
+    </div>
+  </header>
+  <h2>Dit is een schoolproject</h2>
 
-      <form id="form">
+  <main>
+
+    <form id="form">
+      <fieldset>
+        <legend>Erfenisbelasting aangeven</legend>
+
+        <!-- OVERLEDENE -->
+
         <fieldset>
-          <legend>Erfenisbelasting aangeven</legend>
+          <legend>Gegevens overledene</legend>
 
-          <!-- OVERLEDENE -->
+          <div class="q">Voorletter(s), tussenvoegsel(s) en achternaam<span>*</span>
+            <button type="button" class="hintBtn"
+              data-hint="Een BSN bestaat uit 9 cijfers en hoort bij één persoon.">?</button>
 
-          <fieldset>
-            <legend>Gegevens overledene</legend>
+          </div>
 
-            <div class="q">Voorletter(s), tussenvoegsel(s) en achternaam<span>*</span></div>
+          <div class="gegevensOverledene">
+            <input id="voornaam" type="text" name="voorletters" required pattern="[A-Za-z]+"
+              placeholder="Voorletters" />
 
-            <div class="gegevensOverledene">
-              <input
-                id="voornaam"
-                type="text"
-                name="voorletters"
-                required
-                pattern="[A-Za-z]+"
-                placeholder="Voorletters"
-              />
+            <input type="text" name="tussenvoegsel" placeholder="Tussenvoegsel" />
 
-              <input
-                type="text"
-                name="tussenvoegsel"
-                placeholder="Tussenvoegsel"
-              />
+            <input id="achternaam" type="text" name="achternaam" required pattern="[A-Za-z]+"
+              placeholder="Achternaam" />
+          </div>
+          <p class="error_naam">Vul naam correct in</p>
 
-              <input
-                id="achternaam"
-                type="text"
-                name="achternaam"
-                required
-                pattern="[A-Za-z]+"
-                placeholder="Achternaam"
-              />
-            </div>
-              <p class="error_naam">Vul naam correct in</p>
+          <br />
 
-            <br />
+          <label for="bsn">
+            <div class="q">BSN overledene<span>*</span></div>
+          </label>
 
-            <label for="bsn"><div class="q">BSN overledene<span>*</span></div></label>
+          <input type="text" id="bsn" name="bsn" maxlength="9" inputmode="numeric" pattern="[0-9]{9}"
+            title="BSN moet uit 9 cijfers bestaan" required />
+          <p class="error_bsn">Vul bsn correct in</p>
 
-            <input
-              type="text"
-              id="bsn"
-              name="bsn"
-              maxlength="9"
-              inputmode="numeric"
-              pattern="[0-9]{9}"
-              title="BSN moet uit 9 cijfers bestaan"
-              required
-            />
-             <p class="error_bsn">Vul bsn correct in</p>
+          <br /><br />
 
-            <br /><br />
+          <label for="overlijden">
+            <div class="q">Overlijdensdatum<span>*</span></div>
+          </label>
 
-            <label for="overlijden"
-              ><div class="q">Overlijdensdatum<span>*</span></div></label
-            >
+          <input type="date" id="overlijden" name="overlijden" required />
+        </fieldset>
 
-            <input type="date" id="overlijden" name="overlijden" required />
-          </fieldset>
+        <!-- HUWELIJK -->
 
-          <!-- HUWELIJK -->
+        <fieldset class="marriage">
+          <legend>Huwelijk</legend>
 
-          <fieldset class="marriage">
-            <legend>Huwelijk</legend>
+          <div class="q">
+            Was de overledene getrouwd of had de overledene een geregistreerde
+            partner op het moment van overlijden? <span>*</span>
+          </div>
 
-            <div class="q">
-              Was de overledene getrouwd of had de overledene een geregistreerde
-              partner op het moment van overlijden? <span>*</span>
-            </div>
+          <div class="radio-inputs">
 
-            <div class="radio-inputs">
+            <label class="radio">
+              <input type="radio" name="married" value="nee">
+              <span class="name">Nee</span>
+            </label>
 
-                <label class="radio">
-                    <input type="radio" name="married" value="nee">
-                    <span class="name">Nee</span>
-                </label>
+            <label class="radio">
+              <input type="radio" name="married" id="married_yes" value="ja">
+              <span class="name">Ja</span>
+            </label>
+          </div>
 
-                <label class="radio">
-                    <input type="radio" name="married" id="married_yes" value="ja">
-                    <span class="name">Ja</span>
-                </label>
-            </div>
+          <div class="followUp">
+            <fieldset>
 
-            <div class="followUp">
-              <fieldset>
-
-                <div class="q">
-                  Hadden de overledene en diens partner huwelijkse of
-                  partnerschapsvoorwaarden laten vastleggen in een notariële
-                  akte? <span>*</span>
-                </div>
-
-                <div class="radio-inputs">
-
-                <label class="radio">
-                    <input type="radio" name="conditions" value="nee">
-                    <span class="name">Nee</span>
-                </label>
-
-                <label class="radio">
-                    <input type="radio" name="conditions" id="conditions_yes" value="ja">
-                    <span class="name">Ja</span>
-                </label>
-                </div>
-              </div>
-            <div class="followUp2">
-              <fieldset>
-
-                <div class="q">
-                  Hadden de overledene en diens partner een finaal
-verrekenbeding? <span>*</span>
-                </div>
-
-
-            <div class="radio-inputs">
-
-                <label class="radio">
-                    <input type="radio" name="verrekenbeding" value="nee">
-                    <span class="name">Nee</span>
-                </label>
-
-                <label class="radio">
-                    <input type="radio" name="verrekenbeding" value="ja">
-                    <span class="name">Ja</span>
-                </label>
-
-            </div>
-
-              </fieldset>
-            </div>
-          </fieldset>
-
-          <!-- FAMILIE -->
-
-          <fieldset>
-            <legend>Familie geschiedenis</legend>
-
-            <div class="q">Hadden de overledene kinderen? <span>*</span></div>
-
-
-            <div class="radio-inputs">
-
-                <label class="radio">
-                    <input type="radio" name="kids" value="nee">
-                    <span class="name">Nee</span>
-                </label>
-
-                <label class="radio">
-                    <input type="radio" name="kids" value="ja">
-                    <span class="name">Ja</span>
-                </label>
-
-            </div>
-
-  
-          </fieldset>
-
-          <!-- TESTAMENT -->
-
-          <fieldset>
-            <legend>Testament</legend>
-
-            <div class="q">Had de overledene een testament? <span>*</span></div>
-
-            <div class="radio-inputs">
-
-                <label class="radio">
-                    <input type="radio" name="will" value="nee">
-                    <span class="name">Nee</span>
-                </label>
-
-                <label class="radio">
-                    <input type="radio" name="will" value="ja">
-                    <span class="name">Ja</span>
-                </label>
+              <div class="q">
+                Hadden de overledene en diens partner huwelijkse of
+                partnerschapsvoorwaarden laten vastleggen in een notariële
+                akte? <span>*</span>
               </div>
 
-            <br />
+              <div class="radio-inputs">
 
-            <label for="notaris">Protocolnummer notaris<span>*</span></label>
+                <label class="radio">
+                  <input type="radio" name="conditions" value="nee">
+                  <span class="name">Nee</span>
+                </label>
 
-            <br />
+                <label class="radio">
+                  <input type="radio" name="conditions" id="conditions_yes" value="ja">
+                  <span class="name">Ja</span>
+                </label>
+              </div>
+          </div>
+          <div class="followUp2">
+            <fieldset>
 
-            <input type="number" id="notaris" name="notaris" required/>
-             <p class="error_notaris">Vul notaris nummer correct in</p>
-          </fieldset>
+              <div class="q">
+                Hadden de overledene en diens partner een finaal
+                verrekenbeding? <span>*</span>
+              </div>
+
+
+              <div class="radio-inputs">
+
+                <label class="radio">
+                  <input type="radio" name="verrekenbeding" value="nee">
+                  <span class="name">Nee</span>
+                </label>
+
+                <label class="radio">
+                  <input type="radio" name="verrekenbeding" value="ja">
+                  <span class="name">Ja</span>
+                </label>
+
+              </div>
+
+            </fieldset>
+          </div>
+        </fieldset>
+
+        <!-- FAMILIE -->
+
+        <fieldset>
+          <legend>Familie geschiedenis</legend>
+
+          <div class="q">Hadden de overledene kinderen? <span>*</span></div>
+
+
+          <div class="radio-inputs">
+
+            <label class="radio">
+              <input type="radio" name="kids" value="nee">
+              <span class="name">Nee</span>
+            </label>
+
+            <label class="radio">
+              <input type="radio" name="kids" value="ja">
+              <span class="name">Ja</span>
+            </label>
+
+          </div>
+
+
+        </fieldset>
+
+        <!-- TESTAMENT -->
+
+        <fieldset>
+          <legend>Testament</legend>
+
+          <div class="q">Had de overledene een testament? <span>*</span></div>
+
+          <div class="radio-inputs">
+
+            <label class="radio">
+              <input type="radio" name="will" value="nee">
+              <span class="name">Nee</span>
+            </label>
+
+            <label class="radio">
+              <input type="radio" name="will" value="ja">
+              <span class="name">Ja</span>
+            </label>
+          </div>
+
+          <br />
+
+          <label for="notaris">Protocolnummer notaris<span>*</span></label>
+
+          <br />
+
+          <input type="number" id="notaris" name="notaris" required />
+          <p class="error_notaris">Vul notaris nummer correct in</p>
+        </fieldset>
 
         <div class="buttonSection">
           <a href="extraVerkrijgers.html">Controleer gegevens</a>
 
           <a href="https://github.com/MitchellKevin/BT.git">Bekijk de code</a>
         </div>
-        </fieldset>
-      </form>
-    </main>
-  </body>
-  <script>
-    const form = document.getElementById("form");
-const STORAGE_KEY = "erfenisForm";
+      </fieldset>
+    </form>
+    <div id="hintBox" class="hintBox">
+      <div class="dragHandle"></div>
+      <button id="closeHint">✕</button>
+      <div id="hintContent"></div>
+    </div>
+  </main>
+</body>
+<script>
 
-/* FORM OPSLAAN */
-form.addEventListener("input", () => {
+  const hintBox = document.getElementById("hintBox");
+  const hintContent = document.getElementById("hintContent");
+  const closeHint = document.getElementById("closeHint");
 
-  const data = {};
-  const formData = new FormData(form);
-
-  formData.forEach((value, key) => {
-    data[key] = value;
+  document.querySelectorAll(".hintBtn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const text = btn.getAttribute("data-hint");
+      hintContent.innerText = text;
+      hintBox.classList.add("active");
+    });
   });
 
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  closeHint.addEventListener("click", () => {
+    hintBox.classList.remove("active");
+  });
 
-});
+  let startY = 0;
+  let currentY = 0;
+  let isDragging = false;
 
-/* FORM TERUGZETTEN */
-window.addEventListener("DOMContentLoaded", () => {
+  const hintBoxEl = document.getElementById("hintBox");
 
-  const saved = localStorage.getItem(STORAGE_KEY);
-  if (!saved) return;
+  hintBoxEl.addEventListener("touchstart", (e) => {
+    // alleen starten als je bovenaan zit (voorkomt scroll conflict)
+    if (hintBoxEl.scrollTop === 0) {
+      startY = e.touches[0].clientY;
+      isDragging = true;
+    }
+  });
 
-  const data = JSON.parse(saved);
+  hintBoxEl.addEventListener("touchmove", (e) => {
+    if (!isDragging) return;
 
-  Object.keys(data).forEach(name => {
+    currentY = e.touches[0].clientY;
+    const diff = currentY - startY;
 
-    const field = form.elements[name];
-    if (!field) return;
+    if (diff > 0) { // alleen naar beneden
+      hintBoxEl.style.transform = `translateY(${diff}px)`;
+    }
+  });
 
-    if (field.type === "radio") {
+  hintBoxEl.addEventListener("touchend", () => {
+    if (!isDragging) return;
 
-      const radio = form.querySelector(`input[name="${name}"][value="${data[name]}"]`);
-      if (radio) radio.checked = true;
+    const diff = currentY - startY;
 
-    } else {
-
-      field.value = data[name];
-
+    if (diff > 100) {
+      // sluiten
+      hintBoxEl.classList.remove("active");
     }
 
+    // reset
+    hintBoxEl.style.transform = "";
+    isDragging = false;
   });
 
-});
-  </script>
-  <script src="script.js"></script>
+
+  const form = document.getElementById("form");
+  const STORAGE_KEY = "erfenisForm";
+
+  /* FORM OPSLAAN */
+  form.addEventListener("input", () => {
+
+    const data = {};
+    const formData = new FormData(form);
+
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+
+  });
+
+  /* FORM TERUGZETTEN */
+  window.addEventListener("DOMContentLoaded", () => {
+
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (!saved) return;
+
+    const data = JSON.parse(saved);
+
+    Object.keys(data).forEach(name => {
+
+      const field = form.elements[name];
+      if (!field) return;
+
+      if (field.type === "radio") {
+
+        const radio = form.querySelector(`input[name="${name}"][value="${data[name]}"]`);
+        if (radio) radio.checked = true;
+
+      } else {
+
+        field.value = data[name];
+
+      }
+
+    });
+
+  });
+</script>
+<script src="script.js" defer></script>
+
 </html>

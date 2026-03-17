@@ -153,11 +153,14 @@ button {
   background: var(--ns-blue);
   color: white;
   border: none;
-  padding: .9rem;
-  font-size: 1rem;
+  padding: .4em .6em .4em .6em;
+  font-size: .8rem;
   font-weight: 500;
   cursor: pointer;
+  text-align: center;
+  border-radius: 50%;
 }
+
 
 button:hover {
   background: var(--ns-blue-light);
@@ -261,3 +264,58 @@ fieldset:has(input[id="married_yes"]:checked){
 }
 }
 
+/* Hints */
+.hintBox {
+  position: fixed;
+  background: white;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+  padding: 20px;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+/* MOBIEL: van onder */
+@media (max-width: 768px) {
+  .hintBox {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    transform: translateY(100%);
+    border-radius: 15px 15px 0 0;
+  }
+
+  .hintBox.active {
+    transform: translateY(0);
+  }
+}
+
+/* DESKTOP: links */
+@media (min-width: 769px) {
+  .hintBox {
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    transform: translateX(-100%);
+  }
+
+  .hintBox.active {
+    transform: translateX(0);
+  }
+}
+
+#closeHint {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.dragHandle {
+  width: 40px;
+  height: 5px;
+  background: #ccc;
+  border-radius: 5px;
+  margin: 0 auto 10px;
+}
