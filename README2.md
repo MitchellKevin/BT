@@ -135,7 +135,38 @@ De belangrijkste functionalteiten zijn als volgt:
 ---
 
 ## Weekelijkse voortgang gesprekken
+### Week 1
+**Gedaan:**
+- Nog niet heel veel problemen, meer gewoon weer inkomen in het maken van formulieren
 
+**Feedback / inzichten:**
+- Heb vandaag een opfrisser gehad van hoe een form opgebouwd moet worden.
+
+---
+
+### Week 2
+**Gedaan:**
+- Nog niet heel veel problemen, meer gewoon weer inkomen in het maken van formulieren
+
+**Feedback / inzichten:**
+- Heb vandaag een opfrisser gehad van hoe een form opgebouwd moet worden.
+
+---
+
+### Week 3
+**Gedaan:**
+- Nog niet heel veel problemen, meer gewoon weer inkomen in het maken van formulieren
+
+**Feedback / inzichten:**
+- Heb vandaag een opfrisser gehad van hoe een form opgebouwd moet worden.
+
+---
+
+### Week 4 (Eindgesprek)
+**Gedaan:**
+- Nog niet heel veel problemen, meer gewoon weer inkomen in het maken van formulieren
+
+---
 
 ## Belangrijke keuzes
 
