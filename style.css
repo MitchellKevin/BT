@@ -281,7 +281,7 @@ fieldset:has(input[id="married_yes"]:checked){
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 40%;
+    height: 50%;
     transform: translateY(100%);
     border-radius: 15px 15px 0 0;
   }
@@ -294,11 +294,12 @@ fieldset:has(input[id="married_yes"]:checked){
 /* DESKTOP: links */
 @media (min-width: 769px) {
   .hintBox {
-    top: 0;
-    left: 0;
+    right: 0;
     width: 300px;
-    height: 100%;
-    transform: translateX(-100%);
+    height: 50%;
+    transform: translateX(100%);
+    border-radius: 15px 0 0 0;
+    bottom: 0;
   }
 
   .hintBox.active {
