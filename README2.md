@@ -29,8 +29,10 @@ Het doel van de website is dus een platfrom waar gebruikers hun erfenisbelasting
 ## Functionaliteiten
 De belangrijkste functionalteiten zijn als volgt:
 * Introductie wat de gebruiker te wachten staat, wat de gebruiker klaar moet leggen en een waarschuwing dat de data correct ingevoerd moet worden om verdere problemen te voorkomen.
-* Custom error meldingen met CSS + voor extra validatie JS
-* Progressive disclosure bij vragen die vervolg vragen hebben, dus op basis van het antwoord ziet de gebruiker de vraag wel of niet.\
+* De website is volledig responsive voor zowel mobiel gebruik of via een laptop.
+* De website is toegankelijk voor iedereen, zodat iedereen de mogelijkheid geeft om het in te vullen.
+* Custom error meldingen met CSS + voor extra validatie JS.
+* Progressive disclosure bij vragen die vervolg vragen hebben, dus op basis van het antwoord ziet de gebruiker de vraag wel of niet.
 * Antwoorden in Local Storage opgeslagen voor het geval dat de gebruiker weg moet gaan of error een fout is bij het internet. Hierdoor kan de gebruiker verder gaan waar hij/zij gebleven was.
 * Voor vele gebruikers is het invullen van belasting een grote mentale stap, door de soms complexiteit die hierbij komt kijken. Het is daarom belangrijk dat gebruikers hints kunnen zien bij de vragen waardoor ze het beter kunnen begrijpen en niet ontmoedigd worden tijdens het invullen van zo'n emotioneel formulier.
 * Samenvatting van alle antwoorden, zodat de gebruiker kan controleren of het wel goed is. Voordat het verstuurd wordt.
@@ -38,14 +40,97 @@ De belangrijkste functionalteiten zijn als volgt:
 ## Daily Checkups
 ### Dag 1 | 
 **Gedaan:**
-- ...
-- ...
+- Heb vandaag gewerkt aan de HTML structuur van mijn pagina.
 
 **Problemen:**
-- ...
+- Nog niet heel veel problemen, meer gewoon weer inkomen in het maken van formulieren
 
 **Oplossingen / inzichten:**
-- ...
+- Heb vandaag een opfrisser gehad van hoe een form opgebouwd moet worden.
+
+---
+
+### Dag 2 | 
+**Gedaan:**
+- Heb vandaag gewerkt aan de HTML structuur van mijn pagina.
+
+**Problemen:**
+- Nog niet heel veel problemen, meer gewoon weer inkomen in het maken van formulieren
+
+**Oplossingen / inzichten:**
+- Heb vandaag een opfrisser gehad van hoe een form opgebouwd moet worden.
+
+---
+
+### Dag 3 | 
+**Gedaan:**
+- Heb vandaag gewerkt aan de HTML structuur van mijn pagina.
+
+**Problemen:**
+- Nog niet heel veel problemen, meer gewoon weer inkomen in het maken van formulieren
+
+**Oplossingen / inzichten:**
+- Heb vandaag een opfrisser gehad van hoe een form opgebouwd moet worden.
+
+---
+
+### Dag 4 | 
+**Gedaan:**
+- Heb vandaag gewerkt aan de HTML structuur van mijn pagina.
+
+**Problemen:**
+- Nog niet heel veel problemen, meer gewoon weer inkomen in het maken van formulieren
+
+**Oplossingen / inzichten:**
+- Heb vandaag een opfrisser gehad van hoe een form opgebouwd moet worden.
+
+---
+
+### Dag 5 | 
+**Gedaan:**
+- Heb vandaag gewerkt aan de HTML structuur van mijn pagina.
+
+**Problemen:**
+- Nog niet heel veel problemen, meer gewoon weer inkomen in het maken van formulieren
+
+**Oplossingen / inzichten:**
+- Heb vandaag een opfrisser gehad van hoe een form opgebouwd moet worden.
+
+---
+
+### Dag 6 | 
+**Gedaan:**
+- Heb vandaag gewerkt aan de HTML structuur van mijn pagina.
+
+**Problemen:**
+- Nog niet heel veel problemen, meer gewoon weer inkomen in het maken van formulieren
+
+**Oplossingen / inzichten:**
+- Heb vandaag een opfrisser gehad van hoe een form opgebouwd moet worden.
+
+---
+
+### Dag 7 | 
+**Gedaan:**
+- Heb vandaag gewerkt aan de HTML structuur van mijn pagina.
+
+**Problemen:**
+- Nog niet heel veel problemen, meer gewoon weer inkomen in het maken van formulieren
+
+**Oplossingen / inzichten:**
+- Heb vandaag een opfrisser gehad van hoe een form opgebouwd moet worden.
+
+---
+
+### Dag 8 | 
+**Gedaan:**
+- Heb vandaag gewerkt aan de HTML structuur van mijn pagina.
+
+**Problemen:**
+- Nog niet heel veel problemen, meer gewoon weer inkomen in het maken van formulieren
+
+**Oplossingen / inzichten:**
+- Heb vandaag een opfrisser gehad van hoe een form opgebouwd moet worden.
 
 ---
 
