@@ -103,3 +103,6 @@ TODO voor morgen:
 
 
 <!-- Data list voor landcode -->
+Emailjs tutorial:
+https://www.google.com/search?q=emailjs+tutorial&rlz=1C5CHFA_enPT1178NL1178&oq=emailjs+setup&gs_lcrp=EgZjaHJvbWUqBwgBEAAY7wUyBggAEEUYOTIHCAEQABjvBTIKCAIQABiABBiiBDIHCAMQABjvBTIKCAQQABiABBiiBNIBCDcwNTNqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:ddd09c7c,vid:dgcYOm8n8ME,st:0
+

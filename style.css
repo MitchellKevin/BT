@@ -153,12 +153,11 @@ button {
   background: var(--ns-blue);
   color: white;
   border: none;
-  padding: .4em .6em .4em .6em;
+  padding: 1rem;
   font-size: .8rem;
   font-weight: 500;
   cursor: pointer;
   text-align: center;
-  border-radius: 50%;
 }
 
 
@@ -319,4 +318,16 @@ fieldset:has(input[id="married_yes"]:checked){
   background: #ccc;
   border-radius: 5px;
   margin: 0 auto 10px;
+}
+
+.hintBtn, #closeHint{
+  background: var(--ns-blue);
+  color: white;
+  border: none;
+  padding: .4em .6em .4em .6em;
+  font-size: .8rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 50%;
 }

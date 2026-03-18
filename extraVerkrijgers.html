@@ -29,16 +29,17 @@
               <legend>Verkrijger</legend>
 
               <div class="q">BSN / RSIN</div>
-              <input type="text" name="bsn" />
+              <input type="text" name="bsn" maxlength="9" inputmode="numeric" pattern="[0-9]{9}"
+            title="BSN moet uit 9 cijfers bestaan" required / />
 
               <div class="q">Voorletter(s)</div>
-              <input type="text" name="voorletters" />
+              <input type="text" name="voorletters" required pattern="[A-Za-z]+"/>
 
               <div class="q">Tussenvoegsels</div>
-              <input type="text" name="tussenvoegsels" />
+              <input type="text" name="tussenvoegsels" pattern="[A-Za-z]+"/>
 
               <div class="q">Achternaam</div>
-              <input type="text" name="achternaam" />
+              <input type="text" name="achternaam" required pattern="[A-Za-z]+" />
 
               <fieldset>
                 <legend>Krijgt deze verkrijger het hele vermogen?</legend>
