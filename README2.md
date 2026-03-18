@@ -169,6 +169,11 @@ De belangrijkste functionalteiten zijn als volgt:
 ---
 
 ## Belangrijke keuzes
+1. **Radio Buttons:** De keuze die bij de radio buttons gemaakt is of ik de standaard styling wilde hebben of eigen custom styling wilde gebruiken.
 
+**Waarom standaard:** Het voordeel met standaard styling van de radio buttons is dat het voor de gebruiker bekend is er en er geen verwarring is bij de gebruiker wat er moet gebeuren.
+
+**Waarom custom:** Het voordeel met custom styling op de radio buttons is dat je de mogelijke problemen kan oplossen die de standaard styling
 
 ## Reflectie
+Ik ben blij dat ik dat vak heb gevolgd, je ziet ineens hoeveel erbij komt kijken bij een goed formulier. In het bedrijsleven zal ik hier ook werkelijk veel aanhebben, want elke applicatie heeft wel een vorm van een formulier en als je weet hoe je die goed en professioneel maakt lijkt me een handige skill om te hebben. Aan het begin had ik er ook niet heel veel van verwacht, dacht dat het redelijk simpel zou zijn en ik snel klaar zou zijn, maar dat was toch wel even schrikken wat er allemaal bij kwam kijken.

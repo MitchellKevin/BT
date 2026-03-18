@@ -1,121 +1,92 @@
 <!doctype html>
 <html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Verkrijgers</title>
+  </head>
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-<title>Verkrijgers</title>
-</head>
+  <body>
+    <header>
+      <img src="img/logo.png" alt="Logo" width="115" height="85" />
 
-<body>
+      <div class="headerMenu">
+        <img src="account.png" alt="Account" width="30" height="30" />
+        <img src="menu.png" alt="Menu" width="30" height="30" />
+      </div>
+    </header>
 
-<header>
+    <h2>Dit is een schoolproject</h2>
 
-<img src="img/logo.png" alt="Logo" width="115" height="85">
+    <main>
+      <form id="verkrijgersForm">
+        <fieldset>
+          <legend>Verkrijgers</legend>
 
-<div class="headerMenu">
-<img src="account.png" alt="Account" width="30" height="30">
-<img src="menu.png" alt="Menu" width="30" height="30">
-</div>
+          <div id="forms-container">
+            <fieldset class="verkrijger">
+              <legend>Verkrijger</legend>
 
-</header>
+              <div class="q">BSN / RSIN</div>
+              <input type="text" name="bsn" />
 
-<h2>Dit is een schoolproject</h2>
+              <div class="q">Voorletter(s)</div>
+              <input type="text" name="voorletters" />
 
-<main>
+              <div class="q">Tussenvoegsels</div>
+              <input type="text" name="tussenvoegsels" />
 
-<form id="verkrijgersForm">
+              <div class="q">Achternaam</div>
+              <input type="text" name="achternaam" />
 
-<fieldset>
+              <fieldset>
+                <legend>Krijgt deze verkrijger het hele vermogen?</legend>
 
-<legend>Verkrijgers</legend>
-
-<div id="forms-container">
-
-<fieldset class="verkrijger">
-
-<legend>Verkrijger</legend>
-
-<div class="q">BSN / RSIN</div>
-<input type="text" name="bsn">
-
-<div class="q">Voorletter(s)</div>
-<input type="text" name="voorletters">
-
-<div class="q">Tussenvoegsels</div>
-<input type="text" name="tussenvoegsels">
-
-<div class="q">Achternaam</div>
-<input type="text" name="achternaam">
-
-
-<fieldset>
-
-<legend>Krijgt deze verkrijger het hele vermogen?</legend>
-
-            <div class="radio-inputs">
-
-                <label class="radio">
-                    <input type="radio" name="heleVermogen" value="nee">
+                <div class="radio-inputs">
+                  <label class="radio">
+                    <input type="radio" name="heleVermogen" value="nee" />
                     <span class="name">Nee</span>
-                </label>
+                  </label>
 
-                <label class="radio">
-                    <input type="radio" name="heleVermogen" value="ja">
+                  <label class="radio">
+                    <input type="radio" name="heleVermogen" value="ja" />
                     <span class="name">Ja</span>
-                </label>
-            </div>
+                  </label>
+                </div>
+              </fieldset>
 
+              <fieldset>
+                <legend>
+                  Doet deze verkrijger een beroep op diens legitieme portie?
+                </legend>
 
-
-</fieldset>
-
-
-<fieldset>
-
-<legend>Doet deze verkrijger een beroep op diens legitieme portie?</legend>
-
-            <div class="radio-inputs">
-
-                <label class="radio">
-                    <input type="radio" name="legitiemePortie" value="nee">
+                <div class="radio-inputs">
+                  <label class="radio">
+                    <input type="radio" name="legitiemePortie" value="nee" />
                     <span class="name">Nee</span>
-                </label>
+                  </label>
 
-                <label class="radio">
-                    <input type="radio" name="legitiemePortie" value="ja">
+                  <label class="radio">
+                    <input type="radio" name="legitiemePortie" value="ja" />
                     <span class="name">Ja</span>
-                </label>
-            </div>
+                  </label>
+                </div>
+              </fieldset>
+            </fieldset>
+          </div>
 
-</fieldset>
+          <div class="buttonSection">
+            <button type="button" id="addFormBtn">+ Voeg verkrijger toe</button>
 
-</fieldset>
+            <button type="button" id="submitAllBtn">Opslaan</button>
 
-</div>
+            <a href="summery.html">Verder</a>
+          </div>
+        </fieldset>
+      </form>
+    </main>
 
-<div class="buttonSection">
-
-<button type="button" id="addFormBtn">
-+ Voeg verkrijger toe
-</button>
-
-<button type="button" id="submitAllBtn">
-Opslaan
-</button>
-
-<a href="summery.html">Verder</a>
-
-</div>
-
-</fieldset>
-
-</form>
-
-</main>
-
-<script src="script.js"></script>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
