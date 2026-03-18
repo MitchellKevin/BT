@@ -26,7 +26,7 @@ Het doel van de website is dus een platfrom waar gebruikers hun erfenisbelasting
 * Moet werken als JS uitvalt
 
 
-## Functionaliteiten
+## 🚀 Functionaliteiten
 De belangrijkste functionalteiten zijn als volgt:
 * Introductie wat de gebruiker te wachten staat, wat de gebruiker klaar moet leggen en een waarschuwing dat de data correct ingevoerd moet worden om verdere problemen te voorkomen.
 * De website is volledig responsive voor zowel mobiel gebruik of via een laptop.
@@ -37,7 +37,7 @@ De belangrijkste functionalteiten zijn als volgt:
 * Voor vele gebruikers is het invullen van belasting een grote mentale stap, door de soms complexiteit die hierbij komt kijken. Het is daarom belangrijk dat gebruikers hints kunnen zien bij de vragen waardoor ze het beter kunnen begrijpen en niet ontmoedigd worden tijdens het invullen van zo'n emotioneel formulier.
 * Samenvatting van alle antwoorden, zodat de gebruiker kan controleren of het wel goed is. Voordat het verstuurd wordt.
 
-## Daily Checkups
+## 🗣️ Daily Checkups
 ### Dag 1 | 
 **Gedaan:**
 - Heb vandaag gewerkt aan de HTML structuur van mijn pagina.
@@ -134,7 +134,7 @@ De belangrijkste functionalteiten zijn als volgt:
 
 ---
 
-## Weekelijkse voortgang gesprekken
+## 📋 Weekelijkse voortgang gesprekken
 ### Week 1
 **Gedaan:**
 - Opdracht eisen en informatie gelezen als voorbereiding voor dit vak. Form opgezet in html, hierbij heb ik getest over ik meerdere pagina's of SPA wilde. Verder basis styling toegepast op basis van de huisstijl van NS en ik had de bsn in vakjes opgebouwd, waarbij bij elke input de max input werd bereikt en hij een vakje verder ging(automatisch).
@@ -168,7 +168,7 @@ De belangrijkste functionalteiten zijn als volgt:
 
 ---
 
-## Belangrijke keuzes
+## 🔎 Belangrijke keuzes
 1. **Radio Buttons:** De keuze die bij de radio buttons gemaakt is of ik de standaard styling wilde hebben of eigen custom styling wilde gebruiken.
 
 **Waarom standaard:** Het voordeel met standaard styling van de radio buttons is dat het voor de gebruiker bekend is er en er geen verwarring is bij de gebruiker wat er moet gebeuren.
@@ -177,5 +177,5 @@ De belangrijkste functionalteiten zijn als volgt:
 
 2. **Hints:** 
 
-## Reflectie
+## 🪞 Reflectie
 Ik ben blij dat ik dat vak heb gevolgd, je ziet ineens hoeveel erbij komt kijken bij een goed formulier. In het bedrijsleven zal ik hier ook werkelijk veel aanhebben, want elke applicatie heeft wel een vorm van een formulier en als je weet hoe je die goed en professioneel maakt lijkt me een handige skill om te hebben. Aan het begin had ik er ook niet heel veel van verwacht, dacht dat het redelijk simpel zou zijn en ik snel klaar zou zijn, maar dat was toch wel even schrikken wat er allemaal bij kwam kijken. Verder is het goed om deze skill te leren om snel goede, robuste forms te produceren, want hier vind de conversie plaats van mogelijke klanten.
