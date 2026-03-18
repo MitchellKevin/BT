@@ -207,110 +207,248 @@
     </div>
   </main>
 </body>
+<script src="script.js" defer></script>
 <script>
 
-  const hintBox = document.getElementById("hintBox");
-  const hintContent = document.getElementById("hintContent");
-  const closeHint = document.getElementById("closeHint");
+const form = document.getElementById("form");
 
-  document.querySelectorAll(".hintBtn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const text = btn.getAttribute("data-hint");
-      hintContent.innerText = text;
-      hintBox.classList.add("active");
-    });
-  });
+// ── HELPERS ──────────────────────────────────────────────
 
-  closeHint.addEventListener("click", () => {
-    hintBox.classList.remove("active");
-  });
+function setError(el, msg) {
+  el.classList.add("invalid");
+  const err = el.closest("fieldset, .q-block")?.querySelector(".error") 
+            ?? document.querySelector(`.error_${el.name}`)
+            ?? el.nextElementSibling;
+  if (err && err.classList.contains("error") || err?.className.startsWith("error_")) {
+    err.textContent = msg;
+    err.style.display = "block";
+  }
+}
 
-  let startY = 0;
-  let currentY = 0;
-  let isDragging = false;
-
-  const hintBoxEl = document.getElementById("hintBox");
-
-  hintBoxEl.addEventListener("touchstart", (e) => {
-    // alleen starten als je bovenaan zit (voorkomt scroll conflict)
-    if (hintBoxEl.scrollTop === 0) {
-      startY = e.touches[0].clientY;
-      isDragging = true;
+function clearError(el) {
+  el.classList.remove("invalid");
+  // zoek de bijbehorende foutmelding op naam of volgend element
+  const candidates = [
+    form.querySelector(`.error_${el.name}`),
+    el.parentElement?.querySelector(`[class^="error_"]`),
+    el.nextElementSibling
+  ];
+  candidates.forEach(c => {
+    if (c && (c.classList.contains("error") || c.className.startsWith("error_"))) {
+      c.style.display = "none";
     }
   });
+}
 
-  hintBoxEl.addEventListener("touchmove", (e) => {
-    if (!isDragging) return;
+function showError(selector, msg) {
+  const el = document.querySelector(selector);
+  if (!el) return;
+  el.textContent = msg;
+  el.style.display = "block";
+}
 
-    currentY = e.touches[0].clientY;
-    const diff = currentY - startY;
+function hideError(selector) {
+  const el = document.querySelector(selector);
+  if (el) el.style.display = "none";
+}
 
-    if (diff > 0) { // alleen naar beneden
-      hintBoxEl.style.transform = `translateY(${diff}px)`;
+// ── LIVE VALIDATIE PER VELD ───────────────────────────────
+
+// Voorletters
+const voornaamEl = document.getElementById("voornaam");
+voornaamEl?.addEventListener("input", () => {
+  const ok = /^[A-Za-z]+$/.test(voornaamEl.value.trim());
+  ok ? hideError(".error_naam") : showError(".error_naam", "Alleen letters toegestaan");
+});
+
+// Achternaam
+const achternaamEl = document.getElementById("achternaam");
+achternaamEl?.addEventListener("input", () => {
+  const ok = /^[A-Za-z]+$/.test(achternaamEl.value.trim());
+  ok ? hideError(".error_naam") : showError(".error_naam", "Alleen letters toegestaan");
+});
+
+// BSN – elfproef
+const bsnEl = document.getElementById("bsn");
+bsnEl?.addEventListener("input", () => {
+  const val = bsnEl.value.trim();
+  if (!/^[0-9]{9}$/.test(val)) {
+    showError(".error_bsn", "BSN moet uit 9 cijfers bestaan");
+    return;
+  }
+  if (!elfProef(val)) {
+    showError(".error_bsn", "BSN is ongeldig (elfproef mislukt)");
+    return;
+  }
+  hideError(".error_bsn");
+});
+
+function elfProef(bsn) {
+  const digits = bsn.split("").map(Number);
+  const som = digits.slice(0, 8).reduce((acc, d, i) => acc + d * (9 - i), 0)
+            - digits[8]; // laatste cijfer × -1
+  return som % 11 === 0;
+}
+
+// Overlijdensdatum – mag niet in de toekomst liggen
+const overlijdenEl = document.getElementById("overlijden");
+overlijdenEl?.addEventListener("change", () => {
+  const gekozen = new Date(overlijdenEl.value);
+  const vandaag = new Date();
+  vandaag.setHours(0, 0, 0, 0);
+  if (gekozen > vandaag) {
+    overlijdenEl.classList.add("invalid");
+    overlijdenEl.setCustomValidity("Overlijdensdatum mag niet in de toekomst liggen");
+    overlijdenEl.reportValidity();
+  } else {
+    overlijdenEl.classList.remove("invalid");
+    overlijdenEl.setCustomValidity("");
+  }
+});
+
+// Protocolnummer notaris – alleen positieve getallen
+const notarisEl = document.getElementById("notaris");
+notarisEl?.addEventListener("input", () => {
+  const val = Number(notarisEl.value);
+  if (!notarisEl.value || val <= 0 || !Number.isInteger(val)) {
+    showError(".error_notaris", "Vul een geldig protocolnummer in (positief geheel getal)");
+  } else {
+    hideError(".error_notaris");
+  }
+});
+
+// ── SUBMIT VALIDATIE ──────────────────────────────────────
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let isValid = true;
+
+  // Naam
+  const voornaam = voornaamEl?.value.trim() ?? "";
+  const achternaam = achternaamEl?.value.trim() ?? "";
+  if (!/^[A-Za-z]+$/.test(voornaam) || !/^[A-Za-z]+$/.test(achternaam)) {
+    showError(".error_naam", "Vul voor- en achternaam correct in (alleen letters)");
+    isValid = false;
+  } else {
+    hideError(".error_naam");
+  }
+
+  // BSN
+  const bsnVal = bsnEl?.value.trim() ?? "";
+  if (!/^[0-9]{9}$/.test(bsnVal)) {
+    showError(".error_bsn", "BSN moet uit 9 cijfers bestaan");
+    isValid = false;
+  } else if (!elfProef(bsnVal)) {
+    showError(".error_bsn", "BSN is ongeldig (elfproef mislukt)");
+    isValid = false;
+  } else {
+    hideError(".error_bsn");
+  }
+
+  // Overlijdensdatum
+  if (!overlijdenEl?.value) {
+    overlijdenEl.setCustomValidity("Vul een overlijdensdatum in");
+    overlijdenEl.reportValidity();
+    isValid = false;
+  }
+
+  // Huwelijk radio
+  const marriedChecked = form.querySelector('input[name="married"]:checked');
+  if (!marriedChecked) {
+    showError(".error_married", "Maak een keuze");
+    isValid = false;
+  } else {
+    hideError(".error_married");
+  }
+
+  // Kinderen radio
+  const kidsChecked = form.querySelector('input[name="kids"]:checked');
+  if (!kidsChecked) {
+    showError(".error_kids", "Maak een keuze");
+    isValid = false;
+  } else {
+    hideError(".error_kids");
+  }
+
+  // Testament radio
+  const willChecked = form.querySelector('input[name="will"]:checked');
+  if (!willChecked) {
+    showError(".error_will", "Maak een keuze");
+    isValid = false;
+  } else {
+    hideError(".error_will");
+  }
+
+  // Notaris protocolnummer
+  const notarisVal = Number(notarisEl?.value);
+  if (!notarisEl?.value || notarisVal <= 0 || !Number.isInteger(notarisVal)) {
+    showError(".error_notaris", "Vul een geldig protocolnummer in (positief geheel getal)");
+    isValid = false;
+  } else {
+    hideError(".error_notaris");
+  }
+
+  if (isValid) {
+    // Formulier is geldig → ga door
+    window.location.href = "extraVerkrijgers.html";
+  } else {
+    // Scroll naar eerste fout
+    const eersteFout = form.querySelector(".invalid, [style*='display: block']");
+    eersteFout?.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+});
+
+// ── CONDITIONELE VELDEN ───────────────────────────────────
+
+// Huwelijk → toon followUp
+document.querySelectorAll('input[name="married"]').forEach(radio => {
+  radio.addEventListener("change", () => {
+    const followUp = document.querySelector(".followUp");
+    if (followUp) followUp.style.display = radio.value === "ja" ? "block" : "none";
+    if (radio.value === "nee") {
+      const followUp2 = document.querySelector(".followUp2");
+      if (followUp2) followUp2.style.display = "none";
+    }
+    hideError(".error_married");
+  });
+});
+
+// Huwelijkse voorwaarden → toon followUp2
+document.querySelectorAll('input[name="conditions"]').forEach(radio => {
+  radio.addEventListener("change", () => {
+    const followUp2 = document.querySelector(".followUp2");
+    if (followUp2) followUp2.style.display = radio.value === "ja" ? "block" : "none";
+  });
+});
+
+// ── FORM OPSLAAN ──────────────────────────────────────────
+
+const STORAGE_KEY = "erfenisForm";
+
+form.addEventListener("input", () => {
+  const data = {};
+  const formData = new FormData(form);
+  formData.forEach((value, key) => { data[key] = value; });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (!saved) return;
+  const data = JSON.parse(saved);
+  Object.keys(data).forEach(name => {
+    const field = form.elements[name];
+    if (!field) return;
+    if (field.type === "radio") {
+      const radio = form.querySelector(`input[name="${name}"][value="${data[name]}"]`);
+      if (radio) radio.checked = true;
+    } else {
+      field.value = data[name];
     }
   });
-
-  hintBoxEl.addEventListener("touchend", () => {
-    if (!isDragging) return;
-
-    const diff = currentY - startY;
-
-    if (diff > 100) {
-      // sluiten
-      hintBoxEl.classList.remove("active");
-    }
-
-    // reset
-    hintBoxEl.style.transform = "";
-    isDragging = false;
-  });
-
-
-  const form = document.getElementById("form");
-  const STORAGE_KEY = "erfenisForm";
-
-  /* FORM OPSLAAN */
-  form.addEventListener("input", () => {
-
-    const data = {};
-    const formData = new FormData(form);
-
-    formData.forEach((value, key) => {
-      data[key] = value;
-    });
-
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-
-  });
-
-  /* FORM TERUGZETTEN */
-  window.addEventListener("DOMContentLoaded", () => {
-
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (!saved) return;
-
-    const data = JSON.parse(saved);
-
-    Object.keys(data).forEach(name => {
-
-      const field = form.elements[name];
-      if (!field) return;
-
-      if (field.type === "radio") {
-
-        const radio = form.querySelector(`input[name="${name}"][value="${data[name]}"]`);
-        if (radio) radio.checked = true;
-
-      } else {
-
-        field.value = data[name];
-
-      }
-
-    });
-
-  });
+});
+  
 </script>
-<script src="script.js" defer></script>
+
 
 </html>

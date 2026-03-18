@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Erfenisbelasting formulier – Gegevens gemachtigde</title>
+</head>
+
+<body>
+  <header>
+    <img src="img/logo.png" alt="Logo" width="115" height="85" />
+    <div class="headerMenu">
+      <img src="account.png" alt="Account" width="30" height="30" />
+      <img src="menu.png" alt="Menu" width="30" height="30" />
+    </div>
+  </header>
+  <h2>Dit is een schoolproject</h2>
+
+  <main>
+    <form id="form">
+      <fieldset>
+        <legend>Gegevens gemachtigde</legend>
+
+        <p>
+          Vul de gegevens van de gemachtigde in. De gemachtigde is degene die namens 1 of meerdere personen en/of instellingen aangifte doet.
+          Het invullen van een telefoonnummer of e-mailadres is niet verplicht, maar wel handig. Dan kunnen wij u makkelijker vragen stellen of uitleg geven.
+        </p>
+
+        <br />
+
+        <!-- 2A -->
+        <fieldset>
+          <legend>2a</legend>
+
+          <div class="q">
+            Vul 1 van de 3 in: het bsn of RSIN van de gemachtigde, het beconnummer van de adviseur of het protocolnummer van de notaris.
+          </div>
+
+          <br />
+
+          <label for="bsn_rsin">BSN/RSIN gemachtigde</label>
+          <input type="text" id="bsn_rsin" name="bsn_rsin" inputmode="numeric" maxlength="9" pattern="[0-9]{9}" />
+
+          <br /><br />
+
+          <label for="beconnummer">Beconnummer adviseur</label>
+          <input type="text" id="beconnummer" name="beconnummer" />
+
+          <br /><br />
+
+          <label for="protocolnummer">Protocolnummer notaris</label>
+          <input type="text" id="protocolnummer" name="protocolnummer" />
+          <span>Lees ook de toelichting bij vraag 1d.</span>
+        </fieldset>
+
+        <br />
+
+        <!-- 2B -->
+        <fieldset>
+          <legend>2b</legend>
+
+          <div class="gegevensGemachtigde">
+            <label for="voorletters_gem">Voorletter(s), tussenvoegsel(s) en achternaam gemachtigde</label>
+
+            <br />
+
+            <input type="text" id="voorletters_gem" name="voorletters_gem" placeholder="Voorletters" />
+            <input type="text" name="tussenvoegsel_gem" placeholder="Tussenvoegsel" />
+            <input type="text" name="achternaam_gem" placeholder="Achternaam" />
+          </div>
+
+          <br />
+
+          <label for="naam_instelling">
+            Naam instelling <em>(bijvoorbeeld een notariskantoor)</em>
+          </label>
+          <input type="text" id="naam_instelling" name="naam_instelling" />
+
+          <br /><br />
+
+          <!-- Adres in Nederland -->
+          <fieldset>
+            <legend>Adres in Nederland</legend>
+
+            <label for="straat_nl">Straat, huisnummer en toevoeging</label>
+            <div class="adresNederland">
+              <input type="text" id="straat_nl" name="straat_nl" placeholder="Straat" />
+              <input type="text" name="huisnummer_nl" placeholder="Huisnummer" />
+              <input type="text" name="toevoeging_nl" placeholder="Toevoeging" />
+            </div>
+
+            <br />
+
+            <label for="postcode_nl">Postcode en woonplaats</label>
+            <div class="adresNederland">
+              <input type="text" id="postcode_nl" name="postcode_nl" placeholder="Postcode" maxlength="6" />
+              <input type="text" name="woonplaats_nl" placeholder="Woonplaats" />
+            </div>
+          </fieldset>
+
+          <br />
+
+          <!-- Adres in het buitenland -->
+          <fieldset>
+            <legend>Adres in het buitenland</legend>
+
+            <label for="straat_bl">Straat en huisnummer</label>
+            <div class="adresBuitenland">
+              <input type="text" id="straat_bl" name="straat_bl" placeholder="Straat en huisnummer" />
+              <input type="text" name="toevoeging_bl" placeholder="Toevoeging" />
+            </div>
+
+            <br />
+
+            <label for="postcode_bl">Postcode en plaats</label>
+            <div class="adresBuitenland">
+              <input type="text" id="postcode_bl" name="postcode_bl" placeholder="Postcode" />
+              <input type="text" name="plaats_bl" placeholder="Plaats" />
+            </div>
+
+            <br />
+
+            <label for="landcode">Landcode</label>
+            <input type="text" id="landcode" name="landcode" maxlength="3" />
+            <span>In onderdeel C van de toelichting vindt u een lijst met landcodes.</span>
+          </fieldset>
+
+          <br />
+
+          <label for="telefoonnummer">Telefoonnummer</label>
+          <input type="tel" id="telefoonnummer" name="telefoonnummer" />
+
+          <br /><br />
+
+          <label for="emailadres">E-mailadres</label>
+          <input type="email" id="emailadres" name="emailadres" />
+        </fieldset>
+
+        <div class="buttonSection">
+          <a href="extraVerkrijgers.html">Controleer gegevens</a>
+          <a href="https://github.com/MitchellKevin/BT.git">Bekijk de code</a>
+        </div>
+
+      </fieldset>
+    </form>
+  </main>
+
+  <script>
+    const form = document.getElementById("form");
+    const STORAGE_KEY = "gemachtigdeForm";
+
+    form.addEventListener("input", () => {
+      const data = {};
+      const formData = new FormData(form);
+      formData.forEach((value, key) => { data[key] = value; });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (!saved) return;
+      const data = JSON.parse(saved);
+      Object.keys(data).forEach(name => {
+        const field = form.elements[name];
+        if (!field) return;
+        field.value = data[name];
+      });
+    });
+
+    
+  </script>
+</body>
+</html>

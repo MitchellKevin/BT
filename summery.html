@@ -37,40 +37,86 @@
       </section>
     </main>
 
-    <script>
-      const data = JSON.parse(localStorage.getItem("erfenisForm"));
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+    <script>
+      // ── EMAILJS CONFIGURATIE ──────────────────────────────
+      // Vervang deze drie waarden met jouw eigen EmailJS gegevens
+      const EMAILJS_PUBLIC_KEY = "f7G-WWInszKCe-eFH";
+      const EMAILJS_SERVICE_ID = "service_hvkdu46";
+      const EMAILJS_TEMPLATE_ID = "template_h2dzhbh";
+
+      emailjs.init(EMAILJS_PUBLIC_KEY);
+
+      // ── DATA UIT LOCALSTORAGE ─────────────────────────────
+      const data = JSON.parse(localStorage.getItem("erfenisForm"));
       const container = document.getElementById("summary");
 
       if (data) {
         container.innerHTML = `
-<p><strong>Voorletters:</strong> ${data.voorletters || ""}</p>
-<p><strong>Tussenvoegsel:</strong> ${data.tussenvoegsel || ""}</p>
-<p><strong>Achternaam:</strong> ${data.achternaam || ""}</p>
-<p><strong>BSN:</strong> ${data.bsn || ""}</p>
-<p><strong>Overlijdensdatum:</strong> ${data.overlijden || ""}</p>
+          <p><strong>Voorletters:</strong> ${data.voorletters || ""}</p>
+          <p><strong>Tussenvoegsel:</strong> ${data.tussenvoegsel || ""}</p>
+          <p><strong>Achternaam:</strong> ${data.achternaam || ""}</p>
+          <p><strong>BSN:</strong> ${data.bsn || ""}</p>
+          <p><strong>Overlijdensdatum:</strong> ${data.overlijden || ""}</p>
 
-<br>
+          <br>
 
-<p><strong>Getrouwd:</strong> ${data.married || ""}</p>
-<p><strong>Huwelijkse voorwaarden:</strong> ${data.conditions || ""}</p>
-<p><strong>Verrekenbeding:</strong> ${data.verrekenbeding || ""}</p>
+          <p><strong>Getrouwd:</strong> ${data.married || ""}</p>
+          <p><strong>Huwelijkse voorwaarden:</strong> ${data.conditions || ""}</p>
+          <p><strong>Verrekenbeding:</strong> ${data.verrekenbeding || ""}</p>
 
-<br>
+          <br>
 
-<p><strong>Kinderen:</strong> ${data.kids || ""}</p>
+          <p><strong>Kinderen:</strong> ${data.kids || ""}</p>
 
-<br>
+          <br>
 
-<p><strong>Testament:</strong> ${data.will || ""}</p>
-<p><strong>Notaris protocolnummer:</strong> ${data.notaris || ""}</p>
-`;
+          <p><strong>Testament:</strong> ${data.will || ""}</p>
+          <p><strong>Notaris protocolnummer:</strong> ${data.notaris || ""}</p>
+        `;
       }
 
-      document.getElementById("confirm").addEventListener("click", () => {
-        alert("Aanvraag verzonden");
+      // ── VERSTUREN ─────────────────────────────────────────
+      document.getElementById("confirm").addEventListener("click", async () => {
+        if (!data) {
+          alert("Geen gegevens gevonden om te versturen.");
+          return;
+        }
 
-        localStorage.removeItem("erfenisForm");
+        const confirmBtn = document.getElementById("confirm");
+        confirmBtn.disabled = true;
+        confirmBtn.textContent = "Versturen...";
+
+        // Template variabelen — komen overeen met {{variabele}} in je EmailJS template
+        const templateParams = {
+          voorletters:      data.voorletters      || "-",
+          tussenvoegsel:    data.tussenvoegsel    || "-",
+          achternaam:       data.achternaam       || "-",
+          bsn:              data.bsn              || "-",
+          overlijden:       data.overlijden       || "-",
+          married:          data.married          || "-",
+          conditions:       data.conditions       || "-",
+          verrekenbeding:   data.verrekenbeding   || "-",
+          kids:             data.kids             || "-",
+          will:             data.will             || "-",
+          notaris:          data.notaris          || "-",
+        };
+
+        try {
+          await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+
+          alert("Aanvraag succesvol verzonden!");
+          localStorage.removeItem("erfenisForm");
+          window.location.href = "intro.html";
+
+        } catch (error) {
+          console.error("EmailJS fout:", error);
+          alert("Er is iets misgegaan bij het verzenden. Probeer het opnieuw.");
+          confirmBtn.disabled = false;
+          confirmBtn.textContent = "Definitief versturen";
+        }
       });
     </script>
   </body>
