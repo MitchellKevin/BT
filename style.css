@@ -6,19 +6,17 @@
   --background: #f7f7f7;
 }
 
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0; 
+  margin: 0;
 }
 
 body {
   font-family: "Roboto", sans-serif;
-  background: var(--background);
-  color: #222;
   background-color: var(--ns-yellow);
+  color: #222;
 }
 
 header {
@@ -35,18 +33,15 @@ header {
   gap: 1rem;
 }
 
-
 main {
   max-width: 750px;
   margin: auto;
   padding: 2rem 1rem;
 }
 
-
 section {
   margin-top: 2rem;
 }
-
 
 h2 {
   text-align: center;
@@ -57,7 +52,7 @@ h2 {
   font-weight: 400;
 }
 
-
+/* ── FIELDSETS ── */
 fieldset {
   border: none;
   background: white;
@@ -72,16 +67,17 @@ legend {
   margin-bottom: 1rem;
 }
 
-form > fieldset > legend{
-    padding: 5em 1em 0em 1em;
-    font-size: 1.6rem;
+section > fieldset > legend{
+  padding: 5em 1em 0em 1em;
+  font-size: 1.6rem;
 }
 
-.title {
-  font-size: 1.8rem;
+form > fieldset > legend {
+  padding: 5em 1em 0em 1em;
+  font-size: 1.6rem;
 }
 
-
+/* ── VRAGEN ── */
 .q {
   font-size: 1rem;
   margin-bottom: .3rem;
@@ -89,6 +85,7 @@ form > fieldset > legend{
 }
 
 
+/* ── INPUTS ── */
 input[type="text"],
 input[type="number"],
 input[type="date"] {
@@ -108,14 +105,13 @@ input:focus {
 
 input:user-invalid {
   border-color: rgba(255, 0, 0, 0.7);
-  background-color:rgba(244, 102, 102, 0.1);
+  background-color: rgba(244, 102, 102, 0.1);
 }
 
-input:user-valid{
-    border-color: rgba(37, 159, 37, 0.7);
-    background-color:rgba(120, 218, 117, 0.1);
+input:user-valid {
+  border-color: rgba(37, 159, 37, 0.7);
+  background-color: rgba(120, 218, 117, 0.1);
 }
-
 
 .gegevensOverledene {
   display: grid;
@@ -123,26 +119,105 @@ input:user-valid{
   gap: .5rem;
 }
 
-.radioButtons {
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-  margin-bottom: .5rem;
-}
-
+/* ── RADIO BUTTONS ── */
 input[type="radio"] {
   accent-color: var(--ns-blue);
 }
 
+.radio-inputs {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  background-color: #eee;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+  padding: 0.25rem;
+  width: 300px;
+  margin-top: 1em;
+  font-size: 14px;
+}
 
-.followUp, .followUp2 {
+.radio {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.radio input {
+  display: none;
+}
+
+.radio .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  padding: .5rem 0;
+  color: var(--ns-blue);
+  transition: all .15s ease-in-out;
+}
+
+.radio input:checked + .name {
+  background-color: var(--ns-blue);
+  color: #eee;
+  font-weight: 500;
+}
+
+/* ── FOUTMELDINGEN (JS-variant via hidden attribuut) ── */
+.veld-fout {
+  color: rgba(255, 0, 0, 0.9);
+  font-size: 0.875rem;
+  margin-top: -.5rem;
+  margin-bottom: .75rem;
+}
+
+/* CSS-foutmeldingen voor naam/bsn/notaris (werkt zonder JS) */
+.error_naam,
+.error_bsn,
+.error_notaris {
+  color: rgba(255, 0, 0, 0.9);
+  display: none;
+}
+
+fieldset:has(input[name="achternaam"]:user-invalid, input[name="voorletters"]:user-invalid) .error_naam {
   display: block;
+}
+
+fieldset:has(input[name="bsn"]:user-invalid) .error_bsn {
+  display: block;
+}
+
+fieldset:has(input[name="notaris"]:user-invalid) .error_notaris {
+  display: block;
+}
+
+/* ── CONDITIONELE VELDEN — puur CSS, geen JS nodig ── */
+
+/* Standaard verborgen */
+.followUp,
+.followUp2,
+.followUpKids,
+.followUpKindOverleden,
+.followUpWill {
+  display: none;
   margin-top: 1rem;
   padding-left: 1rem;
   border-left: 3px solid var(--ns-blue);
 }
 
+/* Huwelijk */
+fieldset:has(#married_yes:checked) .followUp       { display: block; }
+fieldset:has(#conditions_yes:checked) .followUp2   { display: block; }
 
+/* Familie */
+fieldset:has(#kids_yes:checked) .followUpKids                     { display: block; }
+fieldset:has(#kindOverleden_yes:checked) .followUpKindOverleden   { display: block; }
+
+/* Testament */
+fieldset:has(#will_yes:checked) .followUpWill      { display: block; }
+
+/* ── KNOPPEN ── */
 .buttonSection {
   display: flex;
   flex-direction: column;
@@ -160,7 +235,6 @@ button {
   text-align: center;
 }
 
-
 button:hover {
   background: var(--ns-blue-light);
 }
@@ -172,162 +246,73 @@ a {
   color: var(--ns-blue);
   text-decoration: none;
   background: white;
+  display: block;
 }
 
-
-
-footer {
-  height: 6rem;
-}
-
-.error_naam, .error_bsn, .error_notaris{
-    color: rgb(255, 0, 0, 0.9);
-    display: none;
-}
-
-
-fieldset:has(input[name="achternaam"]:user-invalid, input[name="voornaam"]:user-invalid) {
-    .error_naam{
-        display: block;
-    }
-}
-
-fieldset:has(input[name="bsn"]:user-invalid) {
-    .error_bsn{
-        display: block;
-    }
-}
-
-fieldset:has(input[name="notaris"]:user-invalid) {
-    .error_notaris{
-        display: block;
-    }
-}
-
-span{
-    color: red;
-}
-
-.followUp, .followUp2{
-    display: none;
-}
-.radio-inputs {
+/* ── VERKRIJGER KAARTEN ── */
+.verkrijger {
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  border-radius: 0.5rem;
-  background-color: #EEE;
-  box-sizing: border-box;
-  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
-  padding: 0.25rem;
-  width: 300px;
-  margin-top: 1em;
-  font-size: 14px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
 }
 
-.radio {
-  flex: 1 1 auto;
-  text-align: center;
-}
-
-.radio input {
-  display: none;
-}
-.radio .name {
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.5rem;
-  border: none;
-  padding: .5rem 0;
-  color: var(--ns-blue);
-  transition: all .15s ease-in-out;
-}
-
-.radio input:checked + .name {
-  background-color: var(--ns-blue);
-  color: #EEE;
-  font-weight: 500;
-}
-
-
-fieldset:has(input[id="married_yes"]:checked){
-    .followUp{
-        display: block;
-    }
-    fieldset:has(input[id="conditions_yes"]:checked){
-    .followUp2{
-        display: block;
-    }
-}
-}
-
-/* Hints */
-.hintBox {
-  position: fixed;
-  background: white;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
-  padding: 20px;
-  overflow-y: auto;
-  transition: transform 0.3s ease;
-  z-index: 1000;
-}
-
-/* MOBIEL: van onder */
-@media (max-width: 768px) {
-  .hintBox {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    transform: translateY(100%);
-    border-radius: 15px 15px 0 0;
-  }
-
-  .hintBox.active {
-    transform: translateY(0);
-  }
-}
-
-/* DESKTOP: links */
-@media (min-width: 769px) {
-  .hintBox {
-    right: 0;
-    width: 300px;
-    height: 50%;
-    transform: translateX(100%);
-    border-radius: 15px 0 0 0;
-    bottom: 0;
-  }
-
-  .hintBox.active {
-    transform: translateX(0);
-  }
-}
-
-#closeHint {
+.verkrijger .remove-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0.5rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-size: 1.1rem;
+  cursor: pointer;
+  line-height: 1;
 }
 
-.dragHandle {
-  width: 40px;
-  height: 5px;
-  background: #ccc;
-  border-radius: 5px;
-  margin: 0 auto 10px;
+.verkrijger .remove-btn:hover {
+  color: #b91c1c;
 }
 
-.hintBtn, #closeHint{
+/* ── HINT BOX ── */
+.hint {
+  display: inline-block;
+}
+
+.hint summary {
   background: var(--ns-blue);
   color: white;
   border: none;
-  padding: .4em .6em .4em .6em;
+  padding: .4em .6em;
   font-size: .8rem;
   font-weight: 500;
   cursor: pointer;
-  text-align: center;
   border-radius: 50%;
+  list-style: none; 
 }
+
+.hint summary::-webkit-details-marker {
+  display: none;
+}
+
+.hint p {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 350px;
+  height: 500px;
+  background: white;
+  padding: 1.5rem;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+  border-radius: 15px 0 0 0;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .hint p {
+    left: 0;
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+  }
+}
+

@@ -30,7 +30,6 @@ Het doel van de website is dus een platfrom waar gebruikers hun erfenisbelasting
 De belangrijkste functionalteiten zijn als volgt:
 * Introductie wat de gebruiker te wachten staat, wat de gebruiker klaar moet leggen en een waarschuwing dat de data correct ingevoerd moet worden om verdere problemen te voorkomen.
 * De website is volledig responsive voor zowel mobiel gebruik of via een laptop.
-* De website is toegankelijk voor iedereen, zodat iedereen de mogelijkheid geeft om het in te vullen.
 * Custom error meldingen met CSS + voor extra validatie JS.
 * Progressive disclosure bij vragen die vervolg vragen hebben, dus op basis van het antwoord ziet de gebruiker de vraag wel of niet.
 * Antwoorden in Local Storage opgeslagen voor het geval dat de gebruiker weg moet gaan of error een fout is bij het internet. Hierdoor kan de gebruiker verder gaan waar hij/zij gebleven was.
@@ -52,85 +51,81 @@ De belangrijkste functionalteiten zijn als volgt:
 
 ### Dag 2 | 
 **Gedaan:**
-- Heb vandaag gewerkt aan de HTML structuur van mijn pagina.
+- Hoe ik ervoor kan zorgen dat ik met meerdere input velden, een geheel kan maken en de gebruiker naar het volgende tekstvak kan laten gaan met een beetje JS, waar de huistijl staat en die toegepast. Hoe ik een extra button kan toevoegen.
 
 **Problemen:**
-- Nog niet heel veel problemen, meer gewoon weer inkomen in het maken van formulieren
+- Ik had een probleem met hoe ik terug kon gaan, want met de JS code ging hij elke keer bij de maxLength tabte het naar de volgende, maar dan als je het weg wilde halen moest je per input weer leeg maken.
 
 **Oplossingen / inzichten:**
-- Heb vandaag een opfrisser gehad van hoe een form opgebouwd moet worden.
+- Het was beter om dit idee te schrappen na het voorgangsprek.
 
 ---
 
 ### Dag 3 | 
 **Gedaan:**
-- Heb vandaag gewerkt aan de HTML structuur van mijn pagina.
+- Html validatie met patterns en tijdens mijn cursus ook hoe je met javascript validatie doet alleen dit heb ik nog niet toegepast.
 
 **Problemen:**
-- Nog niet heel veel problemen, meer gewoon weer inkomen in het maken van formulieren
+- Begrijpen hoe regex opgebouwd worden.
 
 **Oplossingen / inzichten:**
-- Heb vandaag een opfrisser gehad van hoe een form opgebouwd moet worden.
+- Het is belangrijk dat als JS uitvalt de validatie nog steeds werkt, js validatie is alleen een toevoeging geen vervanging.
 
 ---
 
 ### Dag 4 | 
 **Gedaan:**
-- Heb vandaag gewerkt aan de HTML structuur van mijn pagina.
-
-**Problemen:**
-- Nog niet heel veel problemen, meer gewoon weer inkomen in het maken van formulieren
+- Ik heb vandaag dezelfde workshop gevolgd over javascript validatie als herhaling en verder heb ik een tweede onderwerp gemaakt waar je verkrijgers kan toevoegen en versturen
 
 **Oplossingen / inzichten:**
-- Heb vandaag een opfrisser gehad van hoe een form opgebouwd moet worden.
+- Hoe ik een form kan dupliceren, zonder error dat het dezelfde naam heeft
 
 ---
 
 ### Dag 5 | 
 **Gedaan:**
-- Heb vandaag gewerkt aan de HTML structuur van mijn pagina.
-
-**Problemen:**
-- Nog niet heel veel problemen, meer gewoon weer inkomen in het maken van formulieren
-
-**Oplossingen / inzichten:**
-- Heb vandaag een opfrisser gehad van hoe een form opgebouwd moet worden.
+- Ik vandaag gewerkt aan custom error berichten en ik heb vandaag een workshop gevolgd over toegankelijkheid bij Js validatie
 
 ---
 
 ### Dag 6 | 
 **Gedaan:**
-- Heb vandaag gewerkt aan de HTML structuur van mijn pagina.
+- Ik heb progressive disclosure gemaakt bij de vragen, ik heb error styling toegepast, local storage toegevoegd en radio buttons gestyled.
+
 
 **Problemen:**
-- Nog niet heel veel problemen, meer gewoon weer inkomen in het maken van formulieren
+- Dat normale radio buttons mogelijk op mobiel minder goed in te drukken zijn en tot frustatie kan leiden en ervoor zorgen dat antwoorden niet verdwijnen bij het verlies van verbinding.
+![alt text](image.png)
 
 **Oplossingen / inzichten:**
-- Heb vandaag een opfrisser gehad van hoe een form opgebouwd moet worden.
+- Ik heb kunnen oplossen dat als een vervolg vraag na een vervolg vraag pas kan openen als de eerste vervolgvraag beantwoord is door te nesten en hoe ik local storage kan gebruiken om het probleem op te lossen.
 
 ---
 
 ### Dag 7 | 
 **Gedaan:**
-- Heb vandaag gewerkt aan de HTML structuur van mijn pagina.
+- Heb vandaag gewerkt aan een introductie en samenvatting van het formulier en mijn code een beetje opgeschoond.
 
 **Problemen:**
-- Nog niet heel veel problemen, meer gewoon weer inkomen in het maken van formulieren
+- Had JS in mijn html en als extern bestand. Dit creerde problemen met het runnen van mijn script.js
 
 **Oplossingen / inzichten:**
-- Heb vandaag een opfrisser gehad van hoe een form opgebouwd moet worden.
+- Alles hergestructuurd in een apart script.js bestand ipv van beide.
 
 ---
 
 ### Dag 8 | 
 **Gedaan:**
-- Heb vandaag gewerkt aan de HTML structuur van mijn pagina.
+- Email.js toegevoegd zodat de gebruiker een mail ontvangt met het door hun beantwoorden vragen toe te sturen. Met data van hun inputs en 11-proef voor bsn toegevoegd.
+  Emailjs tutorial:
+https://www.google.com/search?q=emailjs+tutorial&rlz=1C5CHFA_enPT1178NL1178&oq=emailjs+setup&gs_lcrp=EgZjaHJvbWUqBwgBEAAY7wUyBggAEEUYOTIHCAEQABjvBTIKCAIQABiABBiiBDIHCAMQABjvBTIKCAQQABiABBiiBNIBCDcwNTNqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:ddd09c7c,vid:dgcYOm8n8ME,st:0
+
 
 **Problemen:**
-- Nog niet heel veel problemen, meer gewoon weer inkomen in het maken van formulieren
+- Niet veel probleem heb email.js al eerder toegevoegd op mijn eigen portfolio.
 
 **Oplossingen / inzichten:**
-- Heb vandaag een opfrisser gehad van hoe een form opgebouwd moet worden.
+- Je blijft dingen vinden die je wil aanpassen of toevoegen.
 
 ---
 
@@ -164,7 +159,7 @@ De belangrijkste functionalteiten zijn als volgt:
 
 ### Week 4 (Eindgesprek)
 **Gedaan:**
-- Ik heb na de gast spreker van NL Design System, gekozen op basis van hun overgebrachte kennis om een introductie en samenvatting toe te voegen op de form. Ik vond het wel een goed argument dat gebruikers bij dit soort formulieren als de dood zijn iets fout in te vullen en het dus wel fijn is om van te voren te weten wat er ongeveer gevraagd gaat worden en nog wel belangrijker in mijn mening dat de gebruiker een dubbele controle proef kan uitoefenen op de door hij / zij beantwoorde vragen, voor het verstuurd wordt. Ik heb ook gewerkt aan hints toevoegen als derde pattern, waarbij op groot scherm er een soort popup komt, (gebasseerd op een chatbot) waar de uitleg staat, verder voor responsibility moest ik rekening houden met de verminderde wit ruimte. Ik koos er dus voor om het als een soort overlay over de pagina te leggen, maar niet volledig zo'n 70%. De gebruiker kan dan nog de vraag invullen en bekijken en de uitleg voor de zojuist aangevraagde vraag en dan met een swipe down(of kruisje voor de wat oudere generatie) de uitleg weer te laten verdwijenen.
+- Ik heb na de gast spreker van NL Design System, gekozen op basis van hun overgebrachte kennis om een introductie en samenvatting toe te voegen op de form. Ik vond het wel een goed argument dat gebruikers bij dit soort formulieren als de dood zijn iets fout in te vullen en het dus wel fijn is om van te voren te weten wat er ongeveer gevraagd gaat worden en nog wel belangrijker in mijn mening dat de gebruiker een dubbele controle proef kan uitoefenen op de door hij / zij beantwoorde vragen, voor het verstuurd wordt. Ik heb ook gewerkt aan hints toevoegen als derde pattern, waarbij op groot scherm er een soort popup komt, (gebasseerd op een chatbot) waar de uitleg staat, verder voor responsibility moest ik rekening houden met de verminderde wit ruimte. Ik koos er dus voor om het als een soort overlay over de pagina te leggen, maar niet volledig zo'n 70%. De gebruiker kan dan nog de vraag invullen en bekijken en de uitleg voor de zojuist aangevraagde vraag.
 
 ---
 
@@ -175,12 +170,17 @@ De belangrijkste functionalteiten zijn als volgt:
 
 **Waarom custom:** Het voordeel met custom styling op de radio buttons is dat je de mogelijke problemen kan oplossen die de standaard styling
 
-2. **Hints:** 
+2. **Styling:** 
+**Waarom standaard:** Het is volgens de huisstijl van NS.
+![alt text](image-2.png)
+
+**Waarom custom:** Ik vond de styling die gebruikt wordt op de ns site, niet heel mooi en er on polished uitzien. Heb dus een paar kleine updates gedaan om het er in mijn oog netter uit te laten zien, zonder teveel af te stromen van de ns huisstijl.
+![alt text](image-1.png)
+
+3. **Validation:** De keuze voor het kiezen voor validatie heb ik gekozen voor CSS, HTML validatie, goed uit te voeren en voor dingen als bijv. 11-proef met js te doen als uitbreiding. Ik wilde dus dat javascript een aanvulling was geen vervanging
+
+4. **Controle:** Bij controle na het invullen van het bestand is het belangrijk dat gebruikers kunnen inzien wat ze hebben ingevuld en de mogelijkheid krijgen om dit aan te passen. Maar veel gebruikers vergeten het later weer en dan zou het enorm fijn als ze hier een mail over krijgen. Wel zou de echte mail beveiligd moeten zijn, maar voor proof of concept vind ik de huidge mail prima.
 
 ## 🪞 Reflectie
-Ik ben blij dat ik dat vak heb gevolgd, je ziet ineens hoeveel erbij komt kijken bij een goed formulier. In het bedrijsleven zal ik hier ook werkelijk veel aanhebben, want elke applicatie heeft wel een vorm van een formulier en als je weet hoe je die goed en professioneel maakt lijkt me een handige skill om te hebben. Aan het begin had ik er ook niet heel veel van verwacht, dacht dat het redelijk simpel zou zijn en ik snel klaar zou zijn, maar dat was toch wel even schrikken wat er allemaal bij kwam kijken. Verder is het goed om deze skill te leren om snel goede, robuste forms te produceren, want hier vind de conversie plaats van mogelijke klanten.
-
-<!-- Data list voor landcode -->
-Emailjs tutorial:
-https://www.google.com/search?q=emailjs+tutorial&rlz=1C5CHFA_enPT1178NL1178&oq=emailjs+setup&gs_lcrp=EgZjaHJvbWUqBwgBEAAY7wUyBggAEEUYOTIHCAEQABjvBTIKCAIQABiABBiiBDIHCAMQABjvBTIKCAQQABiABBiiBNIBCDcwNTNqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:ddd09c7c,vid:dgcYOm8n8ME,st:0
+Ik ben blij dat ik dat vak heb gevolgd, je ziet ineens hoeveel erbij komt kijken bij een goed formulier. In het bedrijsleven zal ik hier ook werkelijk veel aanhebben, want elke applicatie heeft wel een vorm van een formulier en als je weet hoe je die goed en professioneel maakt lijkt me een handige skill om te hebben. Aan het begin had ik er ook niet heel veel van verwacht, dacht dat het redelijk simpel zou zijn en ik snel klaar zou zijn, maar dat was toch wel even schrikken wat er allemaal bij kwam kijken en je kan ook maar door blijven gaan, er zijn altijd wel dingen waarvan je baalt dat je het niet heb toegevoegd. Verder is het goed om deze skill te leren om snel goede, robuste forms te produceren, want hier vind de conversie plaats van mogelijke klanten.
 
